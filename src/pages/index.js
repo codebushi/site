@@ -4,6 +4,8 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 
+import logo from '../assets/img/codebushi-icon-white.svg'
+
 class BlogIndex extends React.Component {
     render() {
         const siteTitle = get(this, 'props.data.site.siteMetadata.title')
@@ -20,12 +22,12 @@ class BlogIndex extends React.Component {
                 <div className="banner banner--home mb-0">
                     <div className="banner__content text-center">
                         <div className="pb-8">
-                            <div style={{maxWidth:400, margin: '0 auto'}}>
-                                <Img resolutions={this.props.data.logo.resolutions} />
+                            <div style={{maxWidth:250, margin: '0 auto 1rem'}}>
+                                <img src={logo} alt="Code Bushi" />
                             </div>
                             <h1 className="font-weight-light mb-3"><span className="font-special text-uppercase">Code</span> <span className="font-special-two">Bushi</span></h1>
                             <h2 className="mb-3">Web development tips and resources to elevate your coding journey.</h2>
-                            <h2 className="mb-3">- Coming Soon -</h2>
+                            <h2 className="font-special mb-3">- Coming Soon -</h2>
                         </div>
                         {/*<div className="banner__arrow animation-fadeInOut">
                             <span className="fi-chevron-down h2"></span>
@@ -51,16 +53,6 @@ export const pageQuery = graphql`
                 title
                 author
                 description
-            }
-        }
-        logo: imageSharp(id: { regex: "/logo-codebushi/" }) {
-            resolutions(width: 400, height: 272) {
-              ...GatsbyImageSharpResolutions
-            }
-        }
-        gatsbyTemplate: imageSharp(id: { regex: "/gatsby-template/" }) {
-            sizes(maxWidth: 690) {
-              ...GatsbyImageSharpSizes
             }
         }
     }

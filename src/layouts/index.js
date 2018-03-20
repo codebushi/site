@@ -46,7 +46,7 @@ class Template extends React.Component {
                 </Helmet>
 
                 <Header handleToggleNav={this.toggleNav} toggleClass={toggleClass} />
-                {/*<Navigation handleToggleNav={this.toggleNav} data={this.props.data} />*/}
+                <Navigation handleToggleNav={this.toggleNav} data={this.props.data} />
                 <main itemScope itemProp="mainContentOfPage">
                     {children()}
                 </main>

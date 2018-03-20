@@ -8,7 +8,6 @@ import logo from '../assets/img/codebushi-icon-white.svg'
 
 class BlogIndex extends React.Component {
     render() {
-        const siteTitle = get(this, 'props.data.site.siteMetadata.title')
         const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
         return (
@@ -19,21 +18,68 @@ class BlogIndex extends React.Component {
                     <meta name="description" content={get(this, 'props.data.site.siteMetadata.description')} />
                 </Helmet>
 
-                <div className="banner banner--home mb-0">
+                <div className="banner banner--home">
                     <div className="banner__content text-center">
                         <div className="pb-8">
                             <div style={{maxWidth:250, margin: '0 auto 1rem'}}>
                                 <img src={logo} alt="Code Bushi" />
                             </div>
-                            <h1 className="font-weight-light mb-3"><span className="font-special text-uppercase">Code</span> <span className="font-special-two">Bushi</span></h1>
+                            <h1 className="font-weight-light mb-3"><span className="u-font-secondary text-uppercase">Code</span> <span className="u-font-special">Bushi</span></h1>
                             <h2 className="mb-3">Web development tips and resources to elevate your coding journey.</h2>
-                            <h2 className="font-special mb-3">- Coming Soon -</h2>
                         </div>
-                        {/*<div className="banner__arrow animation-fadeInOut">
+                        <div className="banner__arrow animation-fadeInOut">
                             <span className="fi-chevron-down h2"></span>
-                        </div>*/}
+                        </div>
                     </div>
                 </div>
+
+                <div className="container">
+
+                    {posts.map(post => {
+                        if (post.node.path !== '/404/') {
+                            const title = get(post, 'node.frontmatter.title') || post.node.path
+                            return (
+                                <article className="post" key={post.node.frontmatter.path} itemScope itemType="http://schema.org/Article">
+                                    <div className="row align-items-center">
+                                        <div className="col-lg-6">
+                                            <Link to={post.node.frontmatter.path} className="u-hover-fade">
+                                                <Img sizes={post.node.frontmatter.image.childImageSharp.sizes} />
+                                            </Link>
+                                        </div>
+                                        <div className="col-lg-6">
+                                            <h3 className="mt-4 mt-lg-0" itemProp="name headline">
+                                                <Link to={post.node.frontmatter.path}>
+                                                    {post.node.frontmatter.title}
+                                                </Link>
+                                            </h3>
+                                            <p className="mb-4"><small itemProp="datePublished">{post.node.frontmatter.date}</small></p>
+                                            <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+                                        </div>
+                                    </div>
+                                    <meta itemProp="author" content="Hunter Chang" />
+                                </article>
+                            )
+                        }
+                    })}
+
+                </div>
+
+                <section className="section section--shaded py-6">
+                    <div className="container">
+                        <div className="row align-items-center">
+                            <div className="col-lg-6">
+                                <Img sizes={this.props.data.gatsbyTemplate.sizes} />
+                            </div>
+                            <div className="col-lg-6">
+                                <div className="py-4 text-center">
+                                    <h3 className="mb-4">Gatsby Starters and Templates</h3>
+                                    <p className="mb-4">View my collection of website templates for Gatsby.js. Gatsby is a static site generator which uses modern web technologies such as React.js, Webpack, and GraphQL.</p>
+                                    <p><Link to="/gatsby-starters/" className="btn btn-outline-secondary">View Templates</Link></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
             </div>
         )
@@ -53,6 +99,30 @@ export const pageQuery = graphql`
                 title
                 author
                 description
+            }
+        }
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+            edges {
+                node {
+                    excerpt(pruneLength: 250)
+                    frontmatter {
+                        title
+                        path
+                        date(formatString: "MMMM DD, YYYY")
+                        image {
+                            childImageSharp{
+                                sizes(maxWidth: 800) {
+                                    ...GatsbyImageSharpSizes
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        gatsbyTemplate: imageSharp(id: { regex: "/gatsby-template/" }) {
+            sizes(maxWidth: 690) {
+              ...GatsbyImageSharpSizes
             }
         }
     }

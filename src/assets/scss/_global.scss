@@ -5,13 +5,13 @@ body {
     // background-color: #16171f;
     background-color: #0f1621;
     color: #f4f4f4;
-    font-family: 'Noto Serif', serif;
+    font-family: 'Lato', sans-serif;
     line-height: 1.8;
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Scope One', serif;
 }
 
 hr {
@@ -22,11 +22,4 @@ hr {
     .lead-lg {
         font-size: 1.25rem;
     }
-}
-
-.font-special {
-    font-family: 'Scope One', serif;
-}
-.font-special-two {
-    font-family: 'Kaushan Script', cursive;
 }

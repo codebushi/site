@@ -13,7 +13,7 @@ class BlogPostTemplate extends React.Component {
         return (
             <article className="post-single pt-5" itemScope itemType="http://schema.org/Article">
                 <Helmet>
-                    <title>{`${post.frontmatter.title} | Hunter Chang`}</title>
+                    <title>{`${post.frontmatter.title} | Code Bushi`}</title>
                     <meta name="author" content="Hunter Chang" />
                     <meta name="description" content={post.frontmatter.description} />
                 </Helmet>
@@ -32,7 +32,7 @@ class BlogPostTemplate extends React.Component {
 
                             <div className="mb-5 mt-5">
                                 <ReactDisqusComments
-                                    shortname="code-bushi"
+                                    shortname="hunter-chang"
                                     identifier={post.title}
                                     title={post.frontmatter.title}
                                     url={"https://codebushi.com" + post.frontmatter.path}

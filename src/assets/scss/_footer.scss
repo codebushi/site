@@ -1,3 +1,10 @@
+.site-footer {
+    background-color: $dark-secondary;
+}
+.site-footer__logo {
+    max-width: 260px;
+}
+
 .social-icon-link {
     display: inline-block;
     font-size: 2rem;

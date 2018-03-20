@@ -29,9 +29,11 @@ class Template extends React.Component {
 
         let bodyClass = '';
         let toggleClass = '';
+        let isHomepage = true;
 
         if (location.pathname === '/') {
             bodyClass = ' body-home';
+            // isHomepage = true;
         }
 
         if (this.state.showNav) {
@@ -45,7 +47,7 @@ class Template extends React.Component {
                     <link href="https://file.myfontastic.com/BpzwX4LjHjPM2JxBPqgq4G/icons.css" rel="stylesheet" />
                 </Helmet>
 
-                <Header handleToggleNav={this.toggleNav} toggleClass={toggleClass} />
+                <Header handleToggleNav={this.toggleNav} toggleClass={toggleClass} isHomepage={isHomepage} />
                 <Navigation handleToggleNav={this.toggleNav} data={this.props.data} />
                 <main itemScope itemProp="mainContentOfPage">
                     {children()}
@@ -59,8 +61,7 @@ class Template extends React.Component {
 
 Template.propTypes = {
     children: React.PropTypes.func,
-    location: React.PropTypes.object,
-    route: React.PropTypes.object,
+    location: React.PropTypes.object
 }
 
 export default Template

@@ -67,7 +67,7 @@ git init
 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
 
 # Add the new theme to Hugo's configuration file
-echo  'theme = "ananke"' >\> config.toml
+echo 'theme = "ananke"' >> config.toml
 
 # Adding some content
 hugo new posts/my-first-post.md

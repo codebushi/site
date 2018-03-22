@@ -36,3 +36,9 @@
         color: $primary;
     }
 }
+
+.u-list-spaced {
+    > li {
+        margin-bottom: .9rem;
+    }
+}

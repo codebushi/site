@@ -50,7 +50,7 @@ class GatsbyStarters extends React.Component {
                         <div className="col-md-6">
                             <div className="p-5 text-center">
                                 <h2 className="mb-4">Gatsby Dimension</h2>
-                                <p className="lead-lg mb-4">A fully responsive, single page React.js website template. Built using Gatsby.js and designed by <a href="https://html5up.net/dimension">HTML5 UP</a>. Great for a quick profile or portfolio site.</p>
+                                <p className="lead mb-4">A fully responsive, single page React.js website template. Built using Gatsby.js and designed by <a href="https://html5up.net/dimension">HTML5 UP</a>. Great for a quick profile or portfolio site.</p>
                                 <p>
                                     <a href="http://gatsby-dimension.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
                                     <a href="https://github.com/ChangoMan/gatsby-starter-dimension" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
@@ -68,7 +68,7 @@ class GatsbyStarters extends React.Component {
                         <div className="col-md-6 order-md-2">
                             <div className="p-5 text-center">
                                 <h2 className="mb-4">Gatsby Forty</h2>
-                                <p className="lead-lg mb-4">A colorful website template featuring a landing page, two hero banner styles, and a generic page. Built using Gatsby.js and designed by <a href="https://html5up.net/forty">HTML5 UP</a>.</p>
+                                <p className="lead mb-4">A colorful website template featuring a landing page, two hero banner styles, and a generic page. Built using Gatsby.js and designed by <a href="https://html5up.net/forty">HTML5 UP</a>.</p>
                                 <p>
                                     <a href="http://gatsby-forty.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
                                     <a href="https://github.com/ChangoMan/gatsby-starter-forty" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
@@ -86,7 +86,7 @@ class GatsbyStarters extends React.Component {
                         <div className="col-md-6">
                             <div className="p-5 text-center">
                                 <h2 className="mb-4">Gatsby Strata</h2>
-                                <p className="lead-lg mb-4">This super simple site features a lightbox style photo gallery. Fully responsive and perfect for displaying your work. Designed by <a href="https://html5up.net/strata">HTML5 UP</a>.</p>
+                                <p className="lead mb-4">This super simple site features a lightbox style photo gallery. Fully responsive and perfect for displaying your work. Designed by <a href="https://html5up.net/strata">HTML5 UP</a>.</p>
                                 <p>
                                     <a href="http://gatsby-strata.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
                                     <a href="https://github.com/ChangoMan/gatsby-starter-strata" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
@@ -104,7 +104,7 @@ class GatsbyStarters extends React.Component {
                         <div className="col-md-6 order-md-2">
                             <div className="p-5 text-center">
                                 <h2 className="mb-4">Gatsby Stellar</h2>
-                                <p className="lead-lg mb-4">A scroll friendly, responsive site. Supports single or multiple pages. Has smooth scrolling to the different sections of the page. Designed by <a href="https://html5up.net/stellar">HTML5 UP</a>.</p>
+                                <p className="lead mb-4">A scroll friendly, responsive site. Supports single or multiple pages. Has smooth scrolling to the different sections of the page. Designed by <a href="https://html5up.net/stellar">HTML5 UP</a>.</p>
                                 <p>
                                     <a href="http://gatsby-stellar.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
                                     <a href="https://github.com/codebushi/gatsby-starter-stellar" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
@@ -117,9 +117,9 @@ class GatsbyStarters extends React.Component {
                     </div>
                 </div>
 
-                <div className="container-fluid newsletter text-center" style={{padding: '20px'}}>
+                <div className="container-fluid newsletter text-center" style={{padding: '40px 20px'}}>
                     <div className="container">
-                        <p>Sign up and receive an email alert when the next Gatsby Starter is released!</p>
+                        <p className="lead">Sign up and receive an email alert when the next Gatsby Starter is released!</p>
                         <SubscribeForm {...formProps}/>
                     </div>
                 </div>

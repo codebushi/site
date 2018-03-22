@@ -11,7 +11,7 @@ class BlogPostTemplate extends React.Component {
         const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
         return (
-            <article className="post-single pt-5" itemScope itemType="http://schema.org/Article">
+            <article className="post-single" style={{paddingTop:'4rem'}} itemScope itemType="http://schema.org/Article">
                 <Helmet>
                     <title>{`${post.frontmatter.title} | Code Bushi`}</title>
                     <meta name="author" content="Hunter Chang" />

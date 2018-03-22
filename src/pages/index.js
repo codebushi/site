@@ -21,11 +21,13 @@ class BlogIndex extends React.Component {
                 <div className="banner banner--home">
                     <div className="banner__content text-center">
                         <div className="pb-8">
-                            <div style={{maxWidth:250, margin: '0 auto 1rem'}}>
-                                <img src={logo} alt="Code Bushi" />
+                            <div className="container-fluid">
+                                <div style={{maxWidth:250, margin: '0 auto 1rem'}}>
+                                    <img src={logo} alt="Code Bushi" />
+                                </div>
+                                <h1 className="font-weight-light mb-3"><span className="u-font-secondary text-uppercase">Code</span> <span className="u-font-special">Bushi</span></h1>
+                                <h2 className="mb-3 u-font-primary">Web development tips and resources to elevate your coding journey.</h2>
                             </div>
-                            <h1 className="font-weight-light mb-3"><span className="u-font-secondary text-uppercase">Code</span> <span className="u-font-special">Bushi</span></h1>
-                            <h2 className="mb-3 u-font-primary">Web development tips and resources to elevate your coding journey.</h2>
                         </div>
                         <div className="banner__arrow animation-fadeInOut">
                             <span className="fi-chevron-down h2"></span>
@@ -47,13 +49,13 @@ class BlogIndex extends React.Component {
                                             </Link>
                                         </div>
                                         <div className="col-lg-6">
-                                            <h3 className="mt-4 mt-lg-0" itemProp="name headline">
+                                            <h3 className="post__title mt-4 mt-lg-0" itemProp="name headline">
                                                 <Link to={post.node.frontmatter.path}>
                                                     {post.node.frontmatter.title}
                                                 </Link>
                                             </h3>
                                             <p className="mb-4"><small itemProp="datePublished">{post.node.frontmatter.date}</small></p>
-                                            <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+                                            <p className="post__excerpt" dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
                                         </div>
                                     </div>
                                     <meta itemProp="author" content="Hunter Chang" />

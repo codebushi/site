@@ -18,6 +18,10 @@ hr {
     border-color: #555;
 }
 
+.gatsby-highlight {
+    font-size: 0.85rem;
+}
+
 @include media-breakpoint-up(lg) {
     html {
         font-size: 18px;

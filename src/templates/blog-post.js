@@ -4,11 +4,14 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import ReactDisqusComments from "react-disqus-comments";
+import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, RedditShareButton, RedditIcon } from 'react-share'
 
 class BlogPostTemplate extends React.Component {
     render() {
         const post = this.props.data.markdownRemark
         const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+
+        const shareUrl = 'https://codebushi.com' + post.frontmatter.path
 
         return (
             <article className="post-single" style={{paddingTop:'4rem'}} itemScope itemType="http://schema.org/Article">
@@ -30,12 +33,26 @@ class BlogPostTemplate extends React.Component {
 
                             <hr />
 
+                            <div className="d-flex justify-content-center">
+                                <FacebookShareButton url={shareUrl} quote={post.frontmatter.title} className="mr-3">
+                                    <FacebookIcon size={32} round />
+                                </FacebookShareButton>
+                                <TwitterShareButton url={shareUrl} title={post.frontmatter.title} className="mr-3">
+                                    <TwitterIcon size={32} round />
+                                </TwitterShareButton>
+                                <RedditShareButton url={shareUrl} title={post.frontmatter.title} windowWidth={660} windowHeight={460}>
+                                    <RedditIcon size={32} round />
+                                </RedditShareButton>
+                            </div>
+
+                            <hr />
+
                             <div className="mb-5 mt-5">
                                 <ReactDisqusComments
                                     shortname="hunter-chang"
-                                    identifier={post.title}
+                                    identifier={post.frontmatter.title}
                                     title={post.frontmatter.title}
-                                    url={"https://codebushi.com" + post.frontmatter.path}
+                                    url={shareUrl}
                                 />
                             </div>
 

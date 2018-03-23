@@ -3,6 +3,7 @@
 }
 .site-footer__logo {
     max-width: 260px;
+    margin: 0 auto;
 }
 
 .social-icon-link {
@@ -12,5 +13,11 @@
     line-height: 1;
     &:hover {
         text-decoration: none;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .site-footer__logo {
+        margin: 0;
     }
 }

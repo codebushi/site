@@ -50,7 +50,6 @@ class BlogPostTemplate extends React.Component {
                             <div className="mb-5 mt-5">
                                 <ReactDisqusComments
                                     shortname="hunter-chang"
-                                    identifier={post.frontmatter.title}
                                     title={post.frontmatter.title}
                                     url={shareUrl}
                                 />

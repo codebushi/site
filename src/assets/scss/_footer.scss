@@ -1,3 +1,11 @@
+.site-footer {
+    // background-color: $dark-secondary;
+}
+.site-footer__logo {
+    max-width: 260px;
+    margin: 0 auto;
+}
+
 .social-icon-link {
     display: inline-block;
     font-size: 2rem;
@@ -5,5 +13,11 @@
     line-height: 1;
     &:hover {
         text-decoration: none;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .site-footer__logo {
+        margin: 0;
     }
 }

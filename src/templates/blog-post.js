@@ -4,16 +4,19 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import ReactDisqusComments from "react-disqus-comments";
+import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, RedditShareButton, RedditIcon } from 'react-share'
 
 class BlogPostTemplate extends React.Component {
     render() {
         const post = this.props.data.markdownRemark
         const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
+        const shareUrl = 'https://codebushi.com' + post.frontmatter.path
+
         return (
-            <article className="post-single pt-5" itemScope itemType="http://schema.org/Article">
+            <article className="post-single" style={{paddingTop:'4rem'}} itemScope itemType="http://schema.org/Article">
                 <Helmet>
-                    <title>{`${post.frontmatter.title} | Hunter Chang`}</title>
+                    <title>{`${post.frontmatter.title} | Code Bushi`}</title>
                     <meta name="author" content="Hunter Chang" />
                     <meta name="description" content={post.frontmatter.description} />
                 </Helmet>
@@ -30,12 +33,25 @@ class BlogPostTemplate extends React.Component {
 
                             <hr />
 
+                            <div className="d-flex justify-content-center">
+                                <FacebookShareButton url={shareUrl} quote={post.frontmatter.title} className="mr-3">
+                                    <FacebookIcon size={32} round />
+                                </FacebookShareButton>
+                                <TwitterShareButton url={shareUrl} title={post.frontmatter.title} className="mr-3">
+                                    <TwitterIcon size={32} round />
+                                </TwitterShareButton>
+                                <RedditShareButton url={shareUrl} title={post.frontmatter.title} windowWidth={660} windowHeight={460}>
+                                    <RedditIcon size={32} round />
+                                </RedditShareButton>
+                            </div>
+
+                            <hr />
+
                             <div className="mb-5 mt-5">
                                 <ReactDisqusComments
                                     shortname="hunter-chang"
-                                    identifier={post.title}
                                     title={post.frontmatter.title}
-                                    url={"https://hunterchang.com" + post.frontmatter.path}
+                                    url={shareUrl}
                                 />
                             </div>
 

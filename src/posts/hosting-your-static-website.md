@@ -10,7 +10,7 @@ So you've just put the finishing touches on your [static website](https://codebu
 
 If you're launching a personal website or anything important, I'd highly recommend purchasing a domain name. This would be the only cost you'd incur in this process, but domain names are only about $10 - $15 for an entire year. If you're just experimenting or don't care about your url, the hosting solutions below will give you a subdomain to use for free. The difference basically boils down to: `yoursite.com` vs `yoursite.netlify.com`.
 
-I recently used [Namecheap](https://www.namecheap.com/) because the domain came with free Whois privacy, which is important if you don't want to get spammed by advertisers. Pretty good deal considering that other places charge $5 - $10 just for the privacy option.
+I recently used [Namecheap](https://namecheap.pxf.io/c/1220989/386521/5618) because the domain came with free Whois privacy, which is important if you don't want to get spammed by advertisers. Pretty good deal considering that other places charge $5 - $10 just for the privacy option.
 
 <h3 class="mt-5 mb-3">GitHub Pages</h3>
 
@@ -30,7 +30,7 @@ The `/docs` method is useful if you want to keep track of both the static site t
 
 <h3 class="mt-5 mb-3">Custom Domain Names</h3>
 
-If the free GitHub subdomain isn't ideal, you can use your own domain as I've mentioned earlier. Once you have your domain, navigate to the `Settings` tab for your GitHub repository and enter your custom domain in the Pages section. Next, you'll have to configure your `ALIAS`, `ANAME`, or `A`record with your DNS provider. This step will vary depending on where you've purchased your domain, refer to [this guide](https://help.github.com/articles/setting-up-an-apex-domain/) for more details.
+If the free GitHub subdomain isn't ideal, you can use your own domain as I've mentioned earlier. Head over to [Namecheap](https://namecheap.pxf.io/c/1220989/386521/5618) if you're looking for a new domain. Once you have your domain, navigate to the `Settings` tab for your GitHub repository and enter your custom domain in the Pages section. Next, you'll have to configure your `ALIAS`, `ANAME`, or `A`record with your DNS provider. This step will vary depending on where you've purchased your domain, refer to [this guide](https://help.github.com/articles/setting-up-an-apex-domain/) for more details.
 
 As a side note, you'll get access to a free SSL certificate when using a GitHub subdomain, but you'll lose the SSL when switching to a custom domain. This is also true for Surge.sh, which is another hosting option we'll explore below. Having your site served from `https` is important because Google strongly favors this for SEO rankings. If you want SSL with a custom domain, you can set up a free [Cloudflare account](https://www.cloudflare.com/ssl/) and let Cloudflare handle your DNS record.
 

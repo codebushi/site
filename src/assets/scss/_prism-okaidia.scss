@@ -27,9 +27,14 @@ pre[class*="language-"] {
     hyphens: none;
 }
 
+code[class*="language-"],
 code {
     background: #272822;
     color: $secondary;
+}
+
+pre[class*="language-"] code[class*="language-"] {
+    color: #f8f8f2;
 }
 
 /* Code blocks */

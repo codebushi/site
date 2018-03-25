@@ -62,7 +62,7 @@
                 -webkit-transform: translateY(0);
                 transform: translateY(0);
             }
-            @for $i from 1 through 9 {
+            @for $i from 1 through 10 {
                 li:nth-child(#{$i}) {
                     -o-transition-delay: (#{$i*0.02s});
                     -moz-transition-delay: (#{$i*0.02s});

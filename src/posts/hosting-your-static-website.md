@@ -1,6 +1,6 @@
 ---
 title: Hosting Your Static Website For Free
-date: "2018-03-24"
+date: "2018-03-11"
 path: "/hosting-your-static-website/"
 image: "./img/hosting-static-website.jpg"
 description: "Hosting a static website has become fast, easy, and free. We'll explore options such as GitHub Pages, Surge.sh, and Netlify for deploying your next project."

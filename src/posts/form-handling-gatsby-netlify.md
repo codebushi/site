@@ -1,5 +1,5 @@
 ---
-title: Hosting Your Static Website For Free
+title: Form Handling with Gatsby.js and Netlify
 date: "2018-03-25"
 path: "/form-handling-gatsby-netlify/"
 image: "./img/gatsby-forms.jpg"

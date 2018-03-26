@@ -11,7 +11,7 @@ const Footer = (props) => (
                     <div className="site-footer__logo">
                         <Link to="/"><img src={logoDark} alt="Code Bushi" /></Link>
                     </div>
-                    <p className="mt-3"><Link to="/" className="u-link-white">&copy; 2018 Code Bushi</Link></p>
+                    <p className="mt-3"><Link to="/" className="u-link-white"><small>&copy; 2018 Code Bushi</small></Link></p>
                 </div>
                 <div className="col-md-6 text-center text-lg-right">
                     <p className="mt-md-3">

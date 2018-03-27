@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 500px;
+    min-height: 400px;
     background-color: rgba(0,0,0,0.25);
 }
 
@@ -34,6 +34,11 @@
 
 .banner--gatsby-starters {
     background-image: url(../img/bg-banner-gatsby-starters.jpg);
+}
+
+.banner--blog {
+    margin-bottom: 4rem;
+    background-image: url(../img/bg-banner-blog.jpg);
 }
 
 .banner__arrow {

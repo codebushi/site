@@ -39,7 +39,7 @@ class GatsbyStarters extends React.Component {
                     <meta name="description" content="A collection of React.js website starters and templates for Gatsby.js" />
                 </Helmet>
 
-                <div className="banner banner--page banner--gatsby-starters">
+                <div className="banner banner--gatsby-starters">
                     <div className="banner__content text-center">
                         <h1 className="text-uppercase"><strong>Gatsby.js <br /> Starters and Templates</strong></h1>
                     </div>

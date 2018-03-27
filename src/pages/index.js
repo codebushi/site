@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 
@@ -8,14 +7,14 @@ import logo from '../assets/img/codebushi-icon-white.svg'
 
 class BlogIndex extends React.Component {
     render() {
-        const posts = get(this, 'props.data.allMarkdownRemark.edges')
+        const posts = this.props.data.allMarkdownRemark.edges
 
         return (
             <div>
 
                 <Helmet>
-                    <title>{get(this, 'props.data.site.siteMetadata.title')}</title>
-                    <meta name="description" content={get(this, 'props.data.site.siteMetadata.description')} />
+                    <title>{this.props.data.site.siteMetadata.title}</title>
+                    <meta name="description" content={this.props.data.site.siteMetadata.description} />
                 </Helmet>
 
                 <div className="banner banner--home">
@@ -39,7 +38,7 @@ class BlogIndex extends React.Component {
 
                     {posts.map(post => {
                         if (post.node.path !== '/404/') {
-                            const title = get(post, 'node.frontmatter.title') || post.node.path
+                            const title = post.node.frontmatter.title || post.node.path
                             return (
                                 <article className="post" key={post.node.frontmatter.path} itemScope itemType="http://schema.org/Article">
                                     <div className="row align-items-center">
@@ -111,7 +110,10 @@ export const pageQuery = graphql`
                 description
             }
         }
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+        allMarkdownRemark(
+            sort: { fields: [frontmatter___date], order: DESC },
+            filter: { frontmatter: { featured: { eq: true } } }
+        ) {
             edges {
                 node {
                     excerpt(pruneLength: 250)

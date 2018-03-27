@@ -1,7 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
-import get from 'lodash/get'
 import Img from 'gatsby-image'
 import ReactDisqusComments from "react-disqus-comments";
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, RedditShareButton, RedditIcon } from 'react-share'
@@ -9,7 +8,7 @@ import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, Red
 class BlogPostTemplate extends React.Component {
     render() {
         const post = this.props.data.markdownRemark
-        const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+        const siteTitle = this.props.data.site.siteMetadata.title
 
         const shareUrl = 'https://codebushi.com' + post.frontmatter.path
 

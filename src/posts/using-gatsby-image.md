@@ -4,6 +4,7 @@ date: "2017-11-19"
 path: "/using-gatsby-image/"
 image: "./img/gatsby-image.jpg"
 description: "Gatsby-image is a React component that works with Gatsby.js to give you an easy way to load and optimize images on a website."
+featured: true
 ---
 
 

@@ -8,16 +8,25 @@ const Footer = (props) => (
         <div className="container">
             <div className="row align-items-center">
                 <div className="col-md-6 text-center text-lg-left">
-                    <div className="site-footer__logo">
-                        <Link to="/"><img src={logoDark} alt="Code Bushi" /></Link>
-                    </div>
-                    <p className="mt-3"><Link to="/" className="u-link-white"><small>&copy; 2018 Code Bushi</small></Link></p>
+                    <ul className="site-footer__nav nav-list">
+                        <li><Link to="/" onClick={props.handleToggleNav}><span>Home</span></Link></li>
+                        <li><Link to="/gatsby-starters/" onClick={props.handleToggleNav}><span>Gatsby.js Starters</span></Link></li>
+                        <li><Link to="/blog/" onClick={props.handleToggleNav}><span>Blog Articles</span></Link></li>
+                        <li><Link to="/resources/" onClick={props.handleToggleNav}><span>Resources</span></Link></li>
+                    </ul>
                 </div>
                 <div className="col-md-6 text-center text-lg-right">
                     <p className="mt-md-3">
                         <a href="https://github.com/codebushi" title="Code Bushi's Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
                     </p>
                 </div>
+            </div>
+
+            <div className="text-center mt-2">
+                <div className="site-footer__logo">
+                    <Link to="/"><img itemprop="image" src={logoDark} alt="Code Bushi" /></Link>
+                </div>
+                <p className="mt-2"><Link to="/" className="u-link-white"><small>&copy; 2018 Code Bushi</small></Link></p>
             </div>
         </div>
     </footer>

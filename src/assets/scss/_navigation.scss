@@ -62,7 +62,7 @@
                 -webkit-transform: translateY(0);
                 transform: translateY(0);
             }
-            @for $i from 1 through 3 {
+            @for $i from 1 through 4 {
                 li:nth-child(#{$i}) {
                     -o-transition-delay: (#{$i*0.02s});
                     -moz-transition-delay: (#{$i*0.02s});
@@ -74,6 +74,15 @@
     }
     .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
         background-color: #fff;
+    }
+}
+
+.nav-list {
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    list-style: none;
+    > li {
+        margin-bottom: .5rem;
     }
 }
 

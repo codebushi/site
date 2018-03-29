@@ -1,5 +1,5 @@
 .site-footer {
-    // background-color: $dark-secondary;
+    background-color: #0c0f17;
 }
 .site-footer__logo {
     max-width: 260px;
@@ -16,8 +16,11 @@
     }
 }
 
-@include media-breakpoint-up(lg) {
-    .site-footer__logo {
-        margin: 0;
+.site-footer__nav {
+    a {
+        color: #fff;
+        &:hover, &:focus {
+            color: $primary;
+        }
     }
 }

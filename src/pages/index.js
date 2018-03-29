@@ -21,7 +21,7 @@ class BlogIndex extends React.Component {
                     <div className="banner__content text-center">
                         <div className="pb-8">
                             <div className="container-fluid">
-                                <div style={{maxWidth:250, margin: '0 auto 1rem'}}>
+                                <div className="home-logo">
                                     <img src={logo} alt="Code Bushi" />
                                 </div>
                                 <h1 className="font-weight-light mb-3"><span className="u-font-secondary text-uppercase">Code</span> <span className="u-font-special">Bushi</span></h1>
@@ -111,7 +111,7 @@ export const pageQuery = graphql`
             }
         }
         allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC },
+            sort: { fields: [frontmatter___date], order: DESC }
             filter: { frontmatter: { featured: { eq: true } } }
         ) {
             edges {

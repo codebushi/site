@@ -117,13 +117,31 @@ class GatsbyStarters extends React.Component {
                     </div>
                 </div>
 
+                <div className="container-fluid" style={{padding: '20px'}}>
+                    <div className="row align-items-center">
+                        <div className="col-md-6">
+                            <div className="p-5 text-center">
+                                <h2 className="mb-4">Gatsby Photon</h2>
+                                <p className="lead mb-4">Great single page site that can be a landing page or a portfolio website. Custom grid elements made with CSS Grid! Original design by <a href="https://html5up.net/photon">HTML5 UP</a>.</p>
+                                <p>
+                                    <a href="http://gatsby-photon.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
+                                    <a href="https://github.com/codebushi/gatsby-starter-photon" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
+                                </p>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <Img sizes={this.props.data.gatsbyPhoton.sizes} />
+                        </div>
+                    </div>
+                </div>
+
                 <div className="container-fluid newsletter text-center" style={{padding: '40px 20px'}}>
                     <div className="container">
                         <p className="lead">Sign up and receive an email alert when the next Gatsby Starter is released!</p>
                         <SubscribeForm {...formProps}/>
+                        <p className="mt-2"><small><em>Your email will never be shared or used for spam!</em></small></p>
                     </div>
                 </div>
-
 
             </div>
         )
@@ -150,6 +168,11 @@ export const pageQuery = graphql`
             }
         }
         gatsbyStellar: imageSharp(id: { regex: "/template-gatsby-stellar/" }) {
+            sizes(maxWidth: 1200) {
+              ...GatsbyImageSharpSizes
+            }
+        }
+        gatsbyPhoton: imageSharp(id: { regex: "/template-gatsby-photon/" }) {
             sizes(maxWidth: 1200) {
               ...GatsbyImageSharpSizes
             }

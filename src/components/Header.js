@@ -25,7 +25,7 @@ const Header = (props) => {
                     <div className="row align-items-center">
                         <div className="col">
                             <div className="logo">
-                                <Link to="/"><img itemprop="image" src={logo} alt="Code Bushi" /></Link>
+                                <Link to="/"><img itemProp="image" src={logo} alt="Code Bushi" /></Link>
                             </div>
                         </div>
                         <div className="col text-right">

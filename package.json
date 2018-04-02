@@ -21,8 +21,7 @@
     "lodash": "^4.17.5",
     "react-disqus-comments": "^1.1.1",
     "react-mailchimp-subscribe": "^1.0.3",
-    "react-share": "^2.0.0",
-    "webfontloader": "^1.6.28"
+    "react-share": "^2.0.0"
   },
   "homepage": "https://codebushi.com",
   "keywords": [

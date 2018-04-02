@@ -6,11 +6,11 @@ import Header from '../components/Header'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 
-WebFont.load({
+/*WebFont.load({
     google: {
         families: ['Kaushan Script', 'Scope One']
     }
-});
+});*/
 
 import '../assets/scss/main.scss'
 

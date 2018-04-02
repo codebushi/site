@@ -1,9 +1,16 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import WebFont from 'webfontloader'
 
 import Header from '../components/Header'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
+
+WebFont.load({
+    google: {
+        families: ['Kaushan Script', 'Scope One']
+    }
+});
 
 import '../assets/scss/main.scss'
 

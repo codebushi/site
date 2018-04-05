@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 
@@ -41,9 +42,18 @@ class GatsbyStarters extends React.Component {
 
                 <div className="banner banner--gatsby-starters">
                     <div className="banner__content text-center">
-                        <h1 className="text-uppercase"><strong>Gatsby.js <br /> Starters and Templates</strong></h1>
+                        <div>
+                            <h1 className="text-uppercase"><strong>Gatsby.js <br /> Starters and Templates</strong></h1>
+                        </div>
                     </div>
                 </div>
+
+                <section className="section section--shaded py-5 text-center">
+                    <div className="container">
+                        <p className="lead mb-0">New to Gatsby? Check out the <a href="#getStarted">Getting Started</a> guide for a quick overview.</p>
+                        <p className="lead mb-0">This site also has some great resources for <Link to="/learning-javascript-and-react/">learning JavaScript and React.js.</Link></p>
+                    </div>
+                </section>
 
                 <div className="container-fluid" style={{padding: '20px'}}>
                     <div className="row align-items-center">
@@ -139,9 +149,60 @@ class GatsbyStarters extends React.Component {
                     <div className="container">
                         <p className="lead">Sign up and receive an email alert when the next Gatsby Starter is released!</p>
                         <SubscribeForm {...formProps}/>
-                        <p className="mt-2"><small><em>Your email will never be shared or used for spam!</em></small></p>
+                        <p className="mt-2 mb-0"><small><em>Your email will never be shared or used for spam!</em></small></p>
                     </div>
                 </div>
+
+                <section id="getStarted" className="section py-5">
+                    <div className="container">
+                        <h2 className="text-center mb-4">Getting Started Guide</h2>
+                        <p>To use <a href="https://www.gatsbyjs.org/">Gatsby.js</a>, make sure you have <a href="https://nodejs.org/en/download/">Node.js</a> and npm installed on your machine. Gatsby starters can be installed via the Gatsby CLI tool or by cloning a GitHub repository. Let's explore the CLI tool by first installing it.</p>
+
+                        <div className="gatsby-highlight">
+                            <pre className="language-bash">
+                                <code className="language-bash">
+                                    <span className="token comment"># Install the Gatsby CLI tool globally on your machine</span><br />
+                                    <span className="token function">npm install</span> --global gatsby-cli
+                                </code>
+                            </pre>
+                        </div>
+
+                        <p>The convention for starting a new Gatsby site with the CLI is:</p>
+
+                        <div className="gatsby-highlight">
+                            <pre className="language-bash">
+                                <code className="language-bash">
+                                    <span className="token function">gatsby new</span> [SITE_DIRECTORY] [URL_OF_STARTER_GITHUB_REPO]
+                                </code>
+                            </pre>
+                        </div>
+
+                        <p>Let's try installing the Gatsby Dimension Starter:</p>
+
+                        <div className="gatsby-highlight">
+                            <pre className="language-bash">
+                                <code className="language-bash">
+                                    <span className="token function">gatsby new</span> gatsby-starter-dimension https://github.com/ChangoMan/gatsby-starter-dimension
+                                </code>
+                            </pre>
+                        </div>
+
+                        <p>This will create a new directory called <code className="language-text">gatsby-starter-dimension</code> and clone the repository into it. It will also automatically run <code className="language-text">npm install</code> in the directory for you. Now we just need to go into the new directory and boot up Gatsby.</p>
+
+                        <div className="gatsby-highlight">
+                            <pre className="language-bash">
+                                <code className="language-bash">
+                                    <span className="token function">cd</span> gatsby-starter-dimension<br /><br />
+                                    <span className="token comment"># Start the dev site, browse to http://localhost:8000/</span><br />
+                                    <span className="token function">gatsby develop</span>
+                                </code>
+                            </pre>
+                        </div>
+
+                        <p>If you don't want to use the Gatsby CLI tool, you can just clone the repository and manually run <code className="language-text">npm install</code> inside the folder, followed by <code className="language-text">gatsby develop</code>. Check out the official <a href="https://www.gatsbyjs.org/tutorial/">Gatsby Tutorials</a> for more information.</p>
+
+                    </div>
+                </section>
 
             </div>
         )

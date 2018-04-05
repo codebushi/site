@@ -10,9 +10,11 @@ disclosure: true
 
 Here are some of my favorite courses and videos for learning general Javascript and React.js. I recommend starting with a solid understanding of vanilla Javascript, learning some new ES6 features and techniques, and then finally moving onto React.js.
 
+*Note:* Some of the courses mentioned are from [Udemy.com]((https://click.linksynergy.com/fs-bin/click?id=ML*i/1MCazE&offerid=358574.7&type=3&subid=0)) and are frequently on sale. It seems like every 2 weeks or so, these courses are discounted to about $10 - $20, so I would recommend waiting a few days if you're not seeing a sale from Udemy.
+
 <h3 class="mt-5 mb-3"><a href="https://click.linksynergy.com/link?id=ML*i/1MCazE&offerid=358574.851712&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fthe-complete-javascript-course%2F">The Complete JavaScript Course</a></h3>
 
-<a href="https://click.linksynergy.com/link?id=ML*i/1MCazE&offerid=358574.851712&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fthe-complete-javascript-course%2F"><img border=0 src="https://udemy-images.udemy.com/course/480x270/851712_fc61_5.jpg"></a>
+<a href="https://click.linksynergy.com/link?id=ML*i/1MCazE&offerid=358574.851712&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fthe-complete-javascript-course%2F"><img class="img-fluid" src="https://udemy-images.udemy.com/course/480x270/851712_fc61_5.jpg"></a>
 
 Source: [Udemy](https://click.linksynergy.com/fs-bin/click?id=ML*i/1MCazE&offerid=358574.7&type=3&subid=0)
 
@@ -22,7 +24,7 @@ The advanced section breaks down inheritance and the prototype chain, and eventu
 
 <h3 class="mt-5 mb-3"><a href="https://click.linksynergy.com/link?id=ML*i/1MCazE&offerid=358574.1286908&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Freact-2nd-edition%2F">The Complete React Web Developer Course (with Redux)</a></h3>
 
-<a href="https://click.linksynergy.com/link?id=ML*i/1MCazE&offerid=358574.1286908&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Freact-2nd-edition%2F"><img border=0 src="https://udemy-images.udemy.com/course/480x270/1286908_1773_4.jpg"></a>
+<a href="https://click.linksynergy.com/link?id=ML*i/1MCazE&offerid=358574.1286908&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Freact-2nd-edition%2F"><img class="img-fluid" src="https://udemy-images.udemy.com/course/480x270/1286908_1773_4.jpg"></a>
 
 Source: [Udemy](https://click.linksynergy.com/fs-bin/click?id=ML*i/1MCazE&offerid=358574.7&type=3&subid=0)
 
@@ -32,7 +34,7 @@ Andrew incorporates mini code challenges in each of his videos, which is extreme
 
 <h3 class="mt-5 mb-3"><a href="https://click.linksynergy.com/link?id=ML*i/1MCazE&offerid=358574.922484&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fthe-complete-nodejs-developer-course-2%2F">The Complete Node.js Developer Course</a></h3>
 
-<a href="https://click.linksynergy.com/link?id=ML*i/1MCazE&offerid=358574.922484&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fthe-complete-nodejs-developer-course-2%2F"><img border=0 src="https://udemy-images.udemy.com/course/480x270/922484_52a1_5.jpg"></a>
+<a href="https://click.linksynergy.com/link?id=ML*i/1MCazE&offerid=358574.922484&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fthe-complete-nodejs-developer-course-2%2F"><img class="img-fluid" src="https://udemy-images.udemy.com/course/480x270/922484_52a1_5.jpg"></a>
 
 Source: [Udemy](https://click.linksynergy.com/fs-bin/click?id=ML*i/1MCazE&offerid=358574.7&type=3&subid=0)
 

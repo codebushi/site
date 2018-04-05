@@ -8,6 +8,8 @@ featured: true
 tags: ["blog"]
 ---
 
+*(This post contains affiliate links. Please read my [disclosure](/disclosure) for more info)*
+
 So you've just put the finishing touches on your [static website](https://codebushi.com/modern-static-website-portfolio/) and it's time to share it with the world. The good news is, there are plenty of great hosting solutions out there to help simplify the process. Deploying a modern static site has become extremely fast, easy, and completely free! Best of all, these solutions all have caching and a content delivery network (CDN) built in for optimal performance.
 
 If you're launching a personal website or anything important, I'd highly recommend purchasing a domain name. This would be the only cost you'd incur in this process, but domain names are only about $10 - $15 for an entire year. If you're just experimenting or don't care about your url, the hosting solutions below will give you a subdomain to use for free. The difference basically boils down to: `yoursite.com` vs `yoursite.netlify.com`.

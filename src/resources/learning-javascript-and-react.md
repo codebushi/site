@@ -5,9 +5,8 @@ path: "/learning-javascript-and-react/"
 image: "./img/resources.jpg"
 description: "My favorite courses and videos for learning Javascript and React.js. Start with vanilla Javascript, incorporate some new ES6 features, and then move onto React.js"
 tags: ["resource"]
+disclosure: true
 ---
-
-*(This post contains affiliate links. Please read my [disclosure](/disclosure) for more info)*
 
 Here are some of my favorite courses and videos for learning general Javascript and React.js. I recommend starting with a solid understanding of vanilla Javascript, learning some new ES6 features and techniques, and then finally moving onto React.js.
 

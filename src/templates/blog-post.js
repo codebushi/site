@@ -28,6 +28,8 @@ class BlogPostTemplate extends React.Component {
                             <p className="mb-4"><small itemProp="datePublished">{post.frontmatter.date}</small></p>
                             <Img className="mb-5" sizes={post.frontmatter.image.childImageSharp.sizes} />
 
+                            {post.frontmatter.disclosure ? <p><em>(This post may contain affiliate links. Please read my <Link to="/disclosure">disclosure</Link> for more info)</em></p> : undefined}
+
                             <div className="pb-4" dangerouslySetInnerHTML={{ __html: post.html }} />
 
                             <hr />
@@ -81,6 +83,7 @@ export const pageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 path
                 description
+                disclosure
                 image {
                     childImageSharp{
                         sizes(maxWidth: 920) {

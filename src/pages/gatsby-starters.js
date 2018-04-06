@@ -51,7 +51,7 @@ class GatsbyStarters extends React.Component {
                 <section className="section section--shaded py-5 text-center">
                     <div className="container">
                         <p className="lead mb-0">New to Gatsby? Check out the <a href="#getStarted">Getting Started</a> guide for a quick overview.</p>
-                        <p className="lead mb-0">This site also has some great resources for <Link to="/learning-javascript-and-react/">learning JavaScript and React.js.</Link></p>
+                        <p className="lead mb-0">Here's also some great resources for <Link to="/learning-javascript-and-react/">learning JavaScript and React.js.</Link></p>
                     </div>
                 </section>
 

@@ -1,6 +1,7 @@
 ---
 title: Featured Blog Images In Gatsby.js
 date: "2017-11-24"
+dateModified: "2018-04-08"
 path: "/gatsby-featured-images/"
 image: "./img/gatsby-featured-image.jpg"
 description: "Adding a cover or featured image to Gatsby.js blog posts."
@@ -96,7 +97,7 @@ featuredImage: "./featured-image.jpg"
 
 Head over to https://unsplash.com/ and download a free stock image, saving it as `featured-image.jpg` in our post directory `/src/pages/hi-folks`.
 
-Since we're here, might as well add images to the other two posts. \**Edit*\* - You'll actually need a featuredImage for all of your posts right now, or else you'll get an error `Cannot read property 'childImageSharp' of null` when trying to render your page.
+Since we're here, might as well add images to the other two posts. \**Update*\* - You'll actually need a featuredImage for all of your posts right now, or else you'll get an error `Cannot read property 'childImageSharp' of null` when trying to render your page.
 
 Go ahead and download two more images, save them in the other two blogs at `/src/pages/hello-world` and `/src/pages/my-second-post`. Make sure to save all the images with the name `featured-image.jpg` Open up their respective index.md files and add `featuredImage: "./featured-image.jpg"` to the frontmatter. *Double check your image names and make sure they match what's in your frontmatter!*
 

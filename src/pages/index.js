@@ -38,7 +38,24 @@ class BlogIndex extends React.Component {
 
                     {posts.map(post => {
                         if (post.node.path !== '/404/') {
-                            const title = post.node.frontmatter.title || post.node.path
+
+                            const datePublished = post.node.frontmatter.date;
+                            const dateModified = post.node.frontmatter.dateModified;
+                            let dateContent;
+
+                            if (!dateModified) {
+                                dateContent = (
+                                    <p className="mb-2 small"><span itemProp="datePublished">{datePublished}</span></p>
+                                )
+                            } else {
+                                dateContent = (
+                                    <p className="mb-2 small">
+                                        <span itemProp="datePublished">{datePublished}</span>
+                                        <em> (Updated: <span itemProp="dateModified">{dateModified}</span>)</em>
+                                    </p>
+                                )
+                            }
+
                             return (
                                 <article className="post" key={post.node.frontmatter.path} itemScope itemType="http://schema.org/Article">
                                     <div className="row align-items-center">
@@ -53,7 +70,7 @@ class BlogIndex extends React.Component {
                                                     {post.node.frontmatter.title}
                                                 </Link>
                                             </h3>
-                                            <p className="mb-4"><small itemProp="datePublished">{post.node.frontmatter.date}</small></p>
+                                            {dateContent}
                                             <p className="post__excerpt" dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
                                         </div>
                                     </div>
@@ -120,7 +137,8 @@ export const pageQuery = graphql`
                     frontmatter {
                         title
                         path
-                        date(formatString: "MMMM DD, YYYY")
+                        date(formatString: "MMM. DD, YYYY")
+                        dateModified(formatString: "MMM. DD, YYYY")
                         image {
                             childImageSharp{
                                 sizes(maxWidth: 800) {

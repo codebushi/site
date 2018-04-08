@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import logo from '../assets/img/codebushi-logo-2.svg'
+import logo from '../assets/img/codebushi-logo.svg'
 
 const NavBtn = (props) => (
     <button className={"hamburger hamburger--spin u-no-outline js-toggle-nav" + props.toggleClass} type="button" onClick={props.handleToggleNav}>

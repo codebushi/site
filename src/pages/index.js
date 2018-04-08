@@ -11,7 +11,6 @@ class BlogIndex extends React.Component {
 
         return (
             <div>
-
                 <Helmet>
                     <title>{this.props.data.site.siteMetadata.title}</title>
                     <meta name="description" content={this.props.data.site.siteMetadata.description} />

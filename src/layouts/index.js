@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
 import Navigation from '../components/Navigation'
@@ -41,15 +40,16 @@ class Template extends React.Component {
         }
 
         return (
-            <div className={'body' + bodyClass + toggleClass} itemScope itemType="http://schema.org/WebPage">
-
-                <Header handleToggleNav={this.toggleNav} toggleClass={toggleClass} isHomepage={isHomepage} />
-                <Navigation handleToggleNav={this.toggleNav} data={this.props.data} />
-                <main itemScope itemProp="mainContentOfPage">
-                    {children()}
-                </main>
-
-                <Footer />
+            <div className={'body' + bodyClass + toggleClass} itemScope itemType="http://schema.org/WebSite">
+                <link itemProp="url" href="https://codebushi.com/"/>
+                <div itemScope itemType="http://schema.org/WebPage">
+                    <Header handleToggleNav={this.toggleNav} toggleClass={toggleClass} isHomepage={isHomepage} />
+                    <Navigation handleToggleNav={this.toggleNav} data={this.props.data} />
+                    <main itemScope itemProp="mainContentOfPage">
+                        {children()}
+                    </main>
+                    <Footer />
+                </div>
             </div>
         )
     }

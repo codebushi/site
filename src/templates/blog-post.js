@@ -46,7 +46,7 @@ class BlogPostTemplate extends React.Component {
                     <div itemProp="publisher" itemScope itemType="https://schema.org/Organization">
                         <meta itemProp="name" content="Code Bushi" />
                         <div itemProp="logo" itemScope itemType="https://schema.org/ImageObject">
-                            <meta itemProp="url" content="https://codebushi.com/static/codebushilogo.png" />
+                            <meta itemProp="url" content="https://codebushi.com/codebushilogo.png" />
                             <meta itemProp="width" content="400" />
                             <meta itemProp="height" content="110" />
                         </div>
@@ -61,7 +61,7 @@ class BlogPostTemplate extends React.Component {
                                 {dateContent}
 
                                 <Img className="mb-5" sizes={post.frontmatter.image.childImageSharp.sizes} />
-                                <meta itemProp="image" content={featuredImg} />
+                                <meta itemProp="image" content={'https://codebushi.com'+featuredImg} />
 
                                 {post.frontmatter.disclosure ? <p><em>(This post may contain affiliate links. Please read my <Link to="/disclosure">disclosure</Link> for more info)</em></p> : undefined}
 

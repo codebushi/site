@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import {Link, withPrefix} from 'gatsby-link'
+import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import ReactDisqusComments from "react-disqus-comments";
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, RedditShareButton, RedditIcon } from 'react-share'
@@ -46,7 +46,7 @@ class BlogPostTemplate extends React.Component {
                     <div itemProp="publisher" itemScope itemType="https://schema.org/Organization">
                         <meta itemProp="name" content="Code Bushi" />
                         <div itemProp="logo" itemScope itemType="https://schema.org/ImageObject">
-                            <meta itemProp="url" content={withPrefix('/codebushilogo.png')} />
+                            <meta itemProp="url" content="https://codebushi.com/static/codebushilogo.png" />
                             <meta itemProp="width" content="400" />
                             <meta itemProp="height" content="110" />
                         </div>

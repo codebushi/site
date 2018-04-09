@@ -1,7 +1,5 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import Img from 'gatsby-image'
 
 class DisclosurePage extends React.Component {
     render() {

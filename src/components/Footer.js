@@ -9,10 +9,11 @@ const Footer = (props) => (
             <div className="row align-items-center">
                 <div className="col-md-6 text-center text-lg-left">
                     <ul className="site-footer__nav nav-list">
-                        <li><Link to="/" onClick={props.handleToggleNav}><span>Home</span></Link></li>
-                        <li><Link to="/gatsby-starters/" onClick={props.handleToggleNav}><span>Gatsby.js Starters</span></Link></li>
-                        <li><Link to="/blog/" onClick={props.handleToggleNav}><span>Blog Articles</span></Link></li>
-                        <li><Link to="/resources/" onClick={props.handleToggleNav}><span>Resources</span></Link></li>
+                        <li><Link to="/"><span>Home</span></Link></li>
+                        <li><Link to="/gatsby-starters/"><span>Gatsby.js Starters</span></Link></li>
+                        <li><Link to="/blog/"><span>Blog Articles</span></Link></li>
+                        <li><Link to="/resources/"><span>Resources</span></Link></li>
+                        <li><Link to="/about/"><span>About</span></Link></li>
                     </ul>
                 </div>
                 <div className="col-md-6 text-center text-lg-right">

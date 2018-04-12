@@ -30,7 +30,7 @@ const formProps = {
     }
 }
 
-class GatsbyStarters extends React.Component {
+class NextjsStarters extends React.Component {
     render() {
 
         return (
@@ -124,7 +124,7 @@ class GatsbyStarters extends React.Component {
     }
 }
 
-export default GatsbyStarters
+export default NextjsStarters
 
 export const pageQuery = graphql`
     query NextjsStartersQuery {

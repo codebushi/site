@@ -1,7 +1,7 @@
 ---
 title: Resources for Learning Javascript and React
 date: "2018-04-04"
-dateModified: "2018-04-07"
+dateModified: "2018-04-09"
 path: "/learning-javascript-and-react/"
 image: "./img/resources.jpg"
 description: "My favorite courses and videos for learning Javascript and React.js. Start with vanilla Javascript, incorporate some new ES6 features, and then move onto React.js"
@@ -97,6 +97,10 @@ This YouTube channel is chock-full of great content and tutorials on everything 
 <h3 class="mt-5 mb-2"><a href="https://www.youtube.com/user/wesbos">Wes Bos</a></h3>
 
 Another great YouTube channel with a lot of videos on vanilla Javascript and some CSS goodness. Wes and Scott from LevelUpTuts also co-host a podcast on web development called [Syntax](https://syntax.fm/). Wes also partnered up with Mozilla Firefox to produce a completely free course on [CSS Grid](https://cssgrid.io/).
+
+<h3 class="mt-5 mb-2"><a href="https://www.youtube.com/user/TechGuyWeb/">Traversy Media</a></h3>
+
+Lots of great crash courses and online tutorials that covers a wide range of topics. Not only does it cover the hottest JavaScript frameworks, there's also content for PHP, Ruby on Rails, Python, and much more. If you like Brad and his teaching style, he offers full courses <a href="https://click.linksynergy.com/deeplink?id=ML*i/1MCazE&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fuser%2Fbrad-traversy%2F">Udemy.com</a>.
 
 <h3 class="mt-5 mb-2">Free Javascript Books</h3>
 

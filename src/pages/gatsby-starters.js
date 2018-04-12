@@ -155,7 +155,7 @@ class GatsbyStarters extends React.Component {
 
                 <section id="getStarted" className="section py-5">
                     <div className="container">
-                        <h2 className="text-center mb-4">Getting Started Guide</h2>
+                        <h2 className="text-center mb-4">Getting Started with Gatsby</h2>
                         <p>To use <a href="https://www.gatsbyjs.org/">Gatsby.js</a>, make sure you have <a href="https://nodejs.org/en/download/">Node.js</a> and npm installed on your machine. Gatsby starters can be installed via the Gatsby CLI tool or by cloning a GitHub repository. Let's explore the CLI tool by first installing it.</p>
 
                         <div className="gatsby-highlight">

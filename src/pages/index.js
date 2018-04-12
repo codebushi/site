@@ -89,9 +89,16 @@ class BlogIndex extends React.Component {
                             </div>
                             <div className="col-lg-6">
                                 <div className="py-4 text-center">
-                                    <h3 className="mb-4">Gatsby Starters and Templates</h3>
-                                    <p className="mb-4">View our collection of website templates for Gatsby.js. Gatsby is a static site generator which uses modern web technologies such as React.js, Webpack, and GraphQL.</p>
-                                    <p><Link to="/gatsby-starters/" className="btn btn-outline-secondary">View Templates</Link></p>
+                                    <h3 className="mb-4">Gatsby.js &amp; Next.js Starters</h3>
+                                    <p className="mb-4">View our collection of website templates for Gatsby.js and Next.js. Gatsby is a static site generator which uses modern web technologies such as React.js, Webpack, and GraphQL. Next.js is a framework for server side rendered React apps and also generates static websites.</p>
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <p><Link to="/gatsby-starters/" className="btn btn-block btn-outline-secondary">Gatsby.js Templates</Link></p>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <p><Link to="/nextjs-website-starters/" className="btn btn-block btn-outline-secondary">Next.js Templates</Link></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

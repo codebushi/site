@@ -40,7 +40,7 @@ class NextjsStarters extends React.Component {
                     <meta name="description" content="Next.js static website starters and templates, build with React.js." />
                 </Helmet>
 
-                <div className="banner banner--gatsby-starters">
+                <div className="banner banner--nextjs-starters">
                     <div className="banner__content text-center">
                         <div>
                             <h1 className="text-uppercase"><strong>Next.js <br /> Starters and Templates</strong></h1>
@@ -69,6 +69,24 @@ class NextjsStarters extends React.Component {
                         </div>
                         <div className="col-md-6">
                             <Img sizes={this.props.data.gatsbyDimension.sizes} />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container-fluid" style={{padding: '20px'}}>
+                    <div className="row align-items-center">
+                        <div className="col-md-6 order-md-2">
+                            <div className="p-5 text-center">
+                                <h2 className="mb-4">Next.js Forty</h2>
+                                <p className="lead mb-4">A colorful website template featuring a landing page layout and many styled elements. Built using Next.js and designed by <a href="https://html5up.net/forty">HTML5 UP</a>.</p>
+                                <p>
+                                    <a href="http://nextjs-forty.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
+                                    <a href="https://github.com/codebushi/nextjs-starter-forty" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
+                                </p>
+                            </div>
+                        </div>
+                        <div className="col-md-6 order-md-1">
+                            <Img sizes={this.props.data.gatsbyForty.sizes} />
                         </div>
                     </div>
                 </div>
@@ -114,7 +132,7 @@ class NextjsStarters extends React.Component {
                             </pre>
                         </div>
 
-                        <p>Your static site will be created in a new folder called <code class="language-text">out</code>. To learn more about Next.js, visit their <a href="https://learnnextjs.com/" target="blank">official tutorial.</a></p>
+                        <p>Your static site will be created in a new folder called <code className="language-text">out</code>. To learn more about Next.js, visit their <a href="https://learnnextjs.com/" target="blank">official tutorial.</a></p>
 
                     </div>
                 </section>
@@ -129,6 +147,11 @@ export default NextjsStarters
 export const pageQuery = graphql`
     query NextjsStartersQuery {
         gatsbyDimension: imageSharp(id: { regex: "/template-gatsby-dimension/" }) {
+            sizes(maxWidth: 1200) {
+              ...GatsbyImageSharpSizes
+            }
+        }
+        gatsbyForty: imageSharp(id: { regex: "/template-gatsby-forty/" }) {
             sizes(maxWidth: 1200) {
               ...GatsbyImageSharpSizes
             }

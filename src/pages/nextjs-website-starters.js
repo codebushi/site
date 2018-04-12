@@ -114,7 +114,7 @@ class NextjsStarters extends React.Component {
                             </pre>
                         </div>
 
-                        <p>Your static site will be created in a new folder called <code class="language-text">out</code>.</p>
+                        <p>Your static site will be created in a new folder called <code class="language-text">out</code>. To learn more about Next.js, visit their <a href="https://learnnextjs.com/" target="blank">official tutorial.</a></p>
 
                     </div>
                 </section>

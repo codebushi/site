@@ -11,6 +11,7 @@ const Footer = (props) => (
                     <ul className="site-footer__nav nav-list">
                         <li><Link to="/"><span>Home</span></Link></li>
                         <li><Link to="/gatsby-starters/"><span>Gatsby.js Starters</span></Link></li>
+                        <li><Link to="/nextjs-website-starters/"><span>Next.js Starters</span></Link></li>
                         <li><Link to="/blog/"><span>Blog Articles</span></Link></li>
                         <li><Link to="/resources/"><span>Resources</span></Link></li>
                         <li><Link to="/about/"><span>About</span></Link></li>

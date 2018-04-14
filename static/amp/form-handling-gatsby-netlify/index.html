@@ -9,7 +9,7 @@
     <title>Form Handling with Gatsby.js and Netlify</title>
     <meta charset="utf-8">
 
-    
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
 
@@ -226,9 +226,9 @@ export default Success
     <script type="application/json">
         {
             "vars": {
-                "account": "UA-12345678-123"
+                "account": "UA-115990515-1"
             },
-            "triggers": ""
+            "triggers": {"trackEvent":{"on":"click","request":"event","selector":"body","vars":{"eventAction":"click","eventCategory":"body-click"}},"trackPageview":{"on":"visible","request":"pageview"}}
         }
     </script>
 </amp-analytics>

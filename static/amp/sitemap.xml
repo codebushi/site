@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <url>
+        <loc>https://codebushi.com/form-handling-gatsby-netlify/</loc>
+        <lastmod>2018-03-25T00:00:00+00:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/hosting-your-static-website/</loc>
+        <lastmod>2018-03-11T00:00:00+00:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/modern-static-website-portfolio/</loc>
+        <lastmod>2018-02-24T00:00:00+00:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/gatbsy-with-contentful-cms/</loc>
+        <lastmod>2018-01-20T00:00:00+00:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/react-youtube-background/</loc>
+        <lastmod>2017-12-11T00:00:00+00:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/gatsby-featured-images/</loc>
+        <lastmod>2017-11-24T00:00:00+00:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/using-gatsby-image/</loc>
+        <lastmod>2017-11-19T00:00:00+00:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/wordpress-to-gatsbyjs/</loc>
+        <lastmod>2017-11-11T00:00:00+00:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/tags/blog/</loc>
+        <lastmod>2018-03-25T00:00:00+00:00</lastmod>
+        <priority>0</priority>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/categories/</loc>
+        <lastmod>0001-01-01T00:00:00+00:00</lastmod>
+        <priority>0</priority>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/</loc>
+        <lastmod>2018-03-25T00:00:00+00:00</lastmod>
+        <priority>0</priority>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/tags/</loc>
+        <lastmod>2018-03-25T00:00:00+00:00</lastmod>
+        <priority>0</priority>
+    </url>
+    
+</urlset>

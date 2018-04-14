@@ -38,6 +38,7 @@ class BlogPostTemplate extends React.Component {
                     <title>{`${post.frontmatter.title} | Code Bushi`}</title>
                     <meta name="author" content="Hunter Chang" />
                     <meta name="description" content={post.frontmatter.description} />
+                    <link rel="amphtml" href={`https://codebushi.com/amp${post.frontmatter.path}`} />
                 </Helmet>
 
                 <div itemProp="blogPost" itemScope itemType="http://schema.org/BlogPosting">

@@ -2,15 +2,17 @@
 <!DOCTYPE html>
 <html amp lang=en-us class=no-js>
 <head>
-<title>Gatsby.js with Contentful Content Management</title>
+<title>Resource</title>
 <meta charset=utf-8>
 <script async custom-element=amp-analytics src=https://cdn.ampproject.org/v0/amp-analytics-0.1.js></script>
 <script async src=https://cdn.ampproject.org/v0.js></script>
 <link rel=amp-manifest href=/amp-manifest.json>
-<link rel=canonical href=https://codebushi.com/gatbsy-with-contentful-cms/ >
+<link rel=canonical href=https://codebushi.com/tags/resource/ >
 <link rel=icon type=image/x-icon href=https://codebushi.com/favicon.ico>
 <meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1">
-<meta name=description content="Blog site using Gatsby.js as the front-end and Contentful as the content management system. A super fast and modern React website example.">
+<meta name=description content="">
+<link href=https://codebushi.com/tags/resource/index.xml rel=alternate type=application/rss+xml title="Code Bushi">
+<link href=https://codebushi.com/tags/resource/index.xml rel=feed type=application/rss+xml title="Code Bushi">
 <meta name=theme-color content=#f72060>
 <script type=application/ld+json>
 {
@@ -48,8 +50,15 @@
         "@type": "ListItem",
         "position": 2,
         "item": {
-          "@id": "https://codebushi.com/gatbsy-with-contentful-cms/",
-          "name": "gatbsy-with-contentful-cms"
+          "@id": "https://codebushi.com/tags/",
+          "name": "tags"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://codebushi.com/tags/resource/",
+          "name": "resource"
         }
     }]
 }
@@ -61,19 +70,19 @@
   "author": {
     "name" : "Hunter Chang"
   },
-  "headline": "Gatsby.js with Contentful Content Management",
-  "description": "Blog site using Gatsby.js as the front-end and Contentful as the content management system. A super fast and modern React website example.",
-  "wordCount": 1182,
-  "datePublished" : "2018-01-20",
-  "dateModified" : "2018-01-20",
+  "headline": "Resource",
+  "description": "",
+  "wordCount": 0,
+  "datePublished" : "2018-04-04",
+  "dateModified" : "2018-04-04",
   "image" : {
       "@context": "http://schema.org",
       "@type": "ImageObject",
-      "url": "https://codebushi.com/amp/img/gatsby-contentful.jpg",
-      "height" : 503,
-      "width" : 920
+      "url": "https://codebushi.com/amp/",
+      "height" : ,
+      "width" : 
     },
-  "mainEntityOfPage" : "https://codebushi.com/gatbsy-with-contentful-cms/",
+  "mainEntityOfPage" : "https://codebushi.com/tags/resource/",
   "publisher" : {
     "@type": "Organization",
     "name" : "codebushi.com",
@@ -93,194 +102,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 </head>
 <body>
 <main>
-<h1>Gatsby.js with Contentful Content Management</h1>
-<div>
-<p><small>January 20, 2018</small></p>
-</div>
-<div>
-<p><amp-img src=https://codebushi.com/amp/img/gatsby-contentful.jpg alt="" layout=responsive width=920 height=503></amp-img></p>
-</div>
-<div>
-<p>One of the most magical aspects of Gatsby.js is its ability to pull in data from a wide variety of sources. Leveraging the power of GraphQL, you can populate a Gatsby website with local markdown files, a CSV file, a MongoDB database, or from a list of popular content management systems (CMS). This means that if you have a Wordpress site, you can use Gatsby to pull in your posts and pages, and create a modern static website with a React front-end.</p>
-<p>Gatsby also supports Contentful, which is a cloud hosted, headless CMS. The “headless” part means that there is no front-end layer, only a back-end which you can log into (think /wp-admin but a lot simpler). This is a perfect fit for us because we can use Gatsby as the front-end layer and Contentful as the back-end to manage pages and blog posts.</p>
-<h4 class="mt-4 mb-4"><a href=https://determined-cray-70c763.netlify.com/ >Contentful and Gatsby.js Blog Demo</a> <small>( <a href=https://github.com/ChangoMan/gatsby-contentful-demo>view source</a> )</small></h4>
-<p>Start by installing the <a href=https://github.com/gatsbyjs/gatsby-starter-default>gatsby-starter-default</a> official starter.</p>
-<pre><code class=language-bash>gatsby new gatsby-contentful https://github.com/gatsbyjs/gatsby-starter-default
-cd gatsby-contentful
-</code></pre>
-<p>Now this starter is pretty bare bones, we’re going to need a few additional plugins to make our site work.</p>
-<pre><code class=language-bash>yarn add gatsby-source-contentful gatsby-transformer-remark gatsby-image
-</code></pre>
-<p>The plugin <code>gatsby-source-contentful</code> is what allows us to connect with Contentful’s API and get our data. The other two plugins will help us format that data into something useful for our site.</p>
-<p>Let’s add some configuration to our <code>gatsby-config.js</code>, which is located in the root folder.</p>
-<pre><code class=language-javascript>module.exports = {
-    siteMetadata: {
-        title: 'Gatsby Default Starter',
-    },
-    plugins: [
-        {
-            resolve: `gatsby-source-contentful`,
-            options: {
-                spaceId: `###`,
-                accessToken: `###`,
-            },
-        },
-        'gatsby-plugin-react-helmet',
-        'gatsby-transformer-remark'
-    ],
-};
-</code></pre>
-<p>Here we are activating the Contentful plugin, but we need to create a new account with Contentful in order to get the <code>spaceId</code> and <code>accessToken</code>. Good thing they offer a very reasonable free tier, let’s sign up! Head on over to <a href=https://www.contentful.com/ >Contentful.com</a>.</p>
-<h3 class="mt-5 mb-3">Setting up Contentful</h3>
-<p>If you are new to Contentful, they have a <a href=https://www.contentful.com/r/knowledgebase/contentful-101/ >beginner’s guide</a> to run you through the basics. For me personally, I come from a Wordpress background and Contentful reminded me a lot of <a href=https://www.advancedcustomfields.com/ >Advanced Custom Fields</a>. You can create a content model and populate it with whatever fields you like. Once you sign up, there should be a Sample Project created for you to experiment with. Let’s add a new content model so we’re all on the same page.</p>
-<p><amp-img src=../img/contentful-blog-model.jpg alt="Contentful Blog Model" layout=responsive width=800 height=378></amp-img></p>
-<p>For this demo, the “Blog” model I created has 4 fields. Title, slug, featured image, and content. The content field is long text and I used the default markdown appearance. The model name, “Blog”, is also important because it will be used later in our GraphQL query.</p>
-<p>While still in Contentful, head to the APIs page and create a new API key. Here is where we can grab our <code>spaceId</code> and <code>accessToken</code> for our <code>gatsby-config.js</code>. We can now also create some sample blog posts, go to the Content page and add them under the newly created Blog content type.</p>
-<h3 class="mt-5 mb-3">Querying for Contentful with GraphQL</h3>
-<p>After you add in your <code>spaceId</code> and <code>accessToken</code>, we can start up our Gatsby development process by going into the terminal and running <code>gatsby develop</code>. Go to <code>http://localhost:8000/</code> to see your site. If we now head to <code>http://localhost:8000/___graphql</code> we can see what’s known as GraphiQL, which is a graphical interface for experimenting with GraphQL queries.</p>
-<p>Let’s try and get our new blog post data from GraphiQL. On the left panel enter the following query and hit the play button.</p>
-<pre><code class=language-javascript>{
-  allContentfulBlog {
-    edges {
-      node {
-        id
-        title
-        slug
-      }
-    }
-  }
-}
-</code></pre>
-<p>In the right panel, you should see the blog posts that you made in Contentful! GraphiQL also has some cool auto complete features, which will show you all the options available for a particular set of data. If you add a new line right above <code>allContentfulBlog</code> and hit <code>control + spacebar</code>, you should get a dropdown with all the other fields you can query.</p>
-<p><amp-img src=../img/graphiql-dropdown.jpg alt="GraphQL Dropdown" layout=responsive width=800 height=381></amp-img></p>
-<p>Notice that the <code>allContentful</code> fields all have the content model’s name after it, such as <code>allContentfulBrand</code> or <code>allContentfulProduct</code>. This is where the Contentful model name comes into play. Since we want our blog posts, the one we want to use is <code>allContentfulBlog</code> to match our “Blog” content model.</p>
-<p>Open up <code>src/pages/index.js</code> in a text editor, this is our homepage component. Replace the code with the <a href=https://github.com/ChangoMan/gatsby-contentful-demo/blob/master/src/pages/index.js>demo site’s index.js code</a>. Notice the GraphQL query at the bottom of the page, which looks very similar to our experiments in GraphiQL.</p>
-<pre><code class=language-javascript>export const pageQuery = graphql`
-    query pageQuery {
-        allContentfulBlog(
-            filter: {
-                node_locale: {eq: "en-US"}
-            },
-            sort: {
-                fields: [createdAt], order: DESC
-            }
-        ) {
-            edges {
-                node {
-                    id
-                    title
-                    slug
-                    createdAt(formatString: "MMMM DD, YYYY")
-                    featuredImage {
-                        resolutions(width: 300) {
-                            ...GatsbyContentfulResolutions
-                        }
-                    }
-                    content {
-                        childMarkdownRemark {
-                            excerpt
-                        }
-                    }
-                }
-            }
-        }
-    }
-`
-</code></pre>
-<p>There’s some extra filters and sorting applied to the data, and we are getting fields such as the title, slug, featured image, and content. If you look at the <code>featuredImage</code>, we are getting the resolutions to be used with <code>gatsby-image</code>. For the <code>content</code>, the query comes in as markdown and we need to use <code>gatsby-transformer-remark</code> to convert it. After saving this page, you should see a list of Contentful blog posts on the homepage!</p>
-<p>The last step is to have Gatsby generate the actual pages for each post. In the root folder, open up the <code>gatsby-node.js</code> file and replace with the following:</p>
-<pre><code class=language-javascript>const path = require('path')
-
-exports.createPages = ({graphql, boundActionCreators}) => {
-    const {createPage} = boundActionCreators
-    return new Promise((resolve, reject) => {
-        const blogPostTemplate = path.resolve('src/templates/blog-post.js')
-        resolve(
-            graphql(`
-                {
-                    allContentfulBlog (limit:100) {
-                        edges {
-                            node {
-                                id
-                                slug
-                            }
-                        }
-                    }
-                }
-            `).then((result) => {
-                if (result.errors) {
-                    reject(result.errors)
-                }
-                result.data.allContentfulBlog.edges.forEach((edge) => {
-                    createPage ({
-                        path: edge.node.slug,
-                        component: blogPostTemplate,
-                        context: {
-                            slug: edge.node.slug
-                        }
-                    })
-                })
-                return
-            })
-        )
-    })
-}
-</code></pre>
-<p>This uses the Gatsby API to automatically create pages that are queried with GraphQL. We use a <code>blogPostTemplate</code> in this file that doesn’t exist yet, so create a new folder and file at <code>src/templates/blog-post.js</code> with the following code:</p>
-<pre><code class=language-jsx>import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Img from "gatsby-image"
-
-class BlogPost extends Component {
-    render() {
-        console.log(this.props)
-        const { title, createdAt, featuredImage, content } = this.props.data.contentfulBlog
-        return (
-            &lt;div>
-                &lt;h1 style={{
-                    borderBottom: '1px solid #ccc',
-                    paddingBottom: '0.5rem'
-                }}>
-                    {title}
-                &lt;/h1>
-                &lt;p>{createdAt}&lt;/p>
-                &lt;div>
-                    &lt;Img sizes={featuredImage.sizes}/>
-                &lt;/div>
-                &lt;hr />
-                &lt;div dangerouslySetInnerHTML={{__html:content.childMarkdownRemark.html}} />
-            &lt;/div>
-        )
-    }
-}
-
-BlogPost.PropTypes = {
-    data: PropTypes.object.isRequired
-}
-
-export default BlogPost
-
-export const pageQuery = graphql`
-    query blogPostQuery($slug: String!){
-        contentfulBlog(slug: {eq: $slug}) {
-            title
-            createdAt(formatString: "MMMM DD, YYYY")
-            featuredImage {
-                sizes(maxWidth: 800) {
-                    ...GatsbyContentfulSizes
-                }
-            }
-            content {
-                childMarkdownRemark {
-                    html
-                }
-            }
-        }
-    }
-`
-</code></pre>
-<p>The query used on this page is similar to the one from the homepage, we just display the data in a different way. You’ll probably need to stop and restart the <code>gatsby develop</code> command in the terminal, this will rebuild the site with the new blog pages. Feel free to add more blog posts in Contentful, but right now you’ll need to rebuild the site each time a new post is created to pull in that data.</p>
-</div>
+Default list
 </main>
 <amp-analytics type=googleanalytics>
 <script type=application/json>

@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://codebushi.com/amp/learning-javascript-and-react/</loc>
+        
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/amp/free-stock-photos/</loc>
+        
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
         <loc>https://codebushi.com/amp/form-handling-gatsby-netlify/</loc>
         
         <changefreq>daily</changefreq>
@@ -73,6 +87,13 @@
     
     <url>
         <loc>https://codebushi.com/amp/</loc>
+        
+        <changefreq>daily</changefreq>
+        <priority>0</priority>
+    </url>
+    
+    <url>
+        <loc>https://codebushi.com/amp/tags/resource/</loc>
         
         <changefreq>daily</changefreq>
         <priority>0</priority>

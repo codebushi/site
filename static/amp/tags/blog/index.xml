@@ -6,10 +6,20 @@
     <description>Recent content in Blog on Code Bushi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://codebushi.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GraphQL API with React.js</title>
+      <link>https://codebushi.com/graphql-api-with-react/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://codebushi.com/graphql-api-with-react/</guid>
+      <description>Many new APIs are moving away from REST and embracing the change to GraphQL. GitHub&amp;rsquo;s API V4 is one example of this, and that&amp;rsquo;s because GraphQL offers a lot more flexibility when querying for data. This tutorial will go over how to incorporate and make queries using React and a modern GraphQL API.
+For this demo, we&amp;rsquo;ll be using AniLists&amp;rsquo;s V2 API to get a list of anime titles and their cover images.</description>
+    </item>
     
     <item>
       <title>Form Handling with Gatsby.js and Netlify</title>
@@ -41,10 +51,10 @@ For this example, I&amp;rsquo;ll be using a static site made with Gatsby.</descr
     
     <item>
       <title>Gatsby.js with Contentful Content Management</title>
-      <link>https://codebushi.com/gatbsy-with-contentful-cms/</link>
+      <link>https://codebushi.com/gatsby-with-contentful-cms/</link>
       <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://codebushi.com/gatbsy-with-contentful-cms/</guid>
+      <guid>https://codebushi.com/gatsby-with-contentful-cms/</guid>
       <description>One of the most magical aspects of Gatsby.js is its ability to pull in data from a wide variety of sources. Leveraging the power of GraphQL, you can populate a Gatsby website with local markdown files, a CSV file, a MongoDB database, or from a list of popular content management systems (CMS). This means that if you have a Wordpress site, you can use Gatsby to pull in your posts and pages, and create a modern static website with a React front-end.</description>
     </item>
     

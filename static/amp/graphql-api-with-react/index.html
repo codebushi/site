@@ -2,18 +2,15 @@
 <!DOCTYPE html>
 <html amp lang=en-us class=no-js>
 <head>
-<meta name=generator content="Hugo 0.27.1">
-<title>Code Bushi</title>
+<title>GraphQL API with React.js</title>
 <meta charset=utf-8>
 <script async custom-element=amp-analytics src=https://cdn.ampproject.org/v0/amp-analytics-0.1.js></script>
 <script async src=https://cdn.ampproject.org/v0.js></script>
 <link rel=amp-manifest href=/amp-manifest.json>
-<link rel=canonical href=https://codebushi.com/ >
+<link rel=canonical href=https://codebushi.com/graphql-api-with-react/ >
 <link rel=icon type=image/x-icon href=https://codebushi.com/favicon.ico>
 <meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1">
-<meta name=description content="">
-<link href=https://codebushi.com/index.xml rel=alternate type=application/rss+xml title="Code Bushi">
-<link href=https://codebushi.com/index.xml rel=feed type=application/rss+xml title="Code Bushi">
+<meta name=description content="A tutorial for using modern GraphQL APIs with React.js. We'll use the GraphiQL explorer to construct our query and then use React and axios to make the API request.">
 <meta name=theme-color content=#f72060>
 <script type=application/ld+json>
 {
@@ -47,6 +44,13 @@
           "@id": "https://codebushi.com/",
           "name": "home"
         }
+    },{
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "https://codebushi.com/graphql-api-with-react/",
+          "name": "graphql-api-with-react"
+        }
     }]
 }
 </script>
@@ -57,19 +61,19 @@
   "author": {
     "name" : "Hunter Chang"
   },
-  "headline": "Code Bushi",
-  "description": "",
-  "wordCount": 0,
+  "headline": "GraphQL API with React.js",
+  "description": "A tutorial for using modern GraphQL APIs with React.js. We&#39;ll use the GraphiQL explorer to construct our query and then use React and axios to make the API request.",
+  "wordCount": 1318,
   "datePublished" : "2018-04-17",
   "dateModified" : "2018-04-17",
   "image" : {
       "@context": "http://schema.org",
       "@type": "ImageObject",
-      "url": "https://codebushi.com/amp/",
-      "height" : ,
-      "width" : 
+      "url": "https://codebushi.com/amp/img/graphql-with-react.jpg",
+      "height" : 503,
+      "width" : 920
     },
-  "mainEntityOfPage" : "https://codebushi.com/",
+  "mainEntityOfPage" : "https://codebushi.com/graphql-api-with-react/",
   "publisher" : {
     "@type": "Organization",
     "name" : "codebushi.com",
@@ -89,6 +93,226 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 </head>
 <body>
 <main>
+<h1>GraphQL API with React.js</h1>
+<div>
+<p><small>April 17, 2018</small></p>
+</div>
+<div>
+<p><amp-img src=https://codebushi.com/amp/img/graphql-with-react.jpg alt="" layout=responsive width=920 height=503></amp-img></p>
+</div>
+<div>
+<p>Many new APIs are moving away from REST and embracing the change to <a href=http://graphql.org/ >GraphQL</a>. GitHub’s <a href=https://developer.github.com/v4/ >API V4</a> is one example of this, and that’s because GraphQL offers a lot more flexibility when querying for data. This tutorial will go over how to incorporate and make queries using React and a modern GraphQL API.</p>
+<p>For this demo, we’ll be using <a href=https://github.com/AniList/ApiV2-GraphQL-Docs>AniLists’s V2 API</a> to get a list of anime titles and their cover images. I chose this API because it’s ready to use without any configurations or OAuth tokens. GitHub’s V4 API works in a similar way, but you’ll need to create an access token and include it with each request. I’ll also be using <a href=https://github.com/axios/axios>axios</a> to make our queries, this should give a general overview on the basics of using GraphQL and React.</p>
+<h4 class="mt-4 mb-4"><a href=http://graphql-react.surge.sh/ >GraphQL API with React Demo</a> <small>( <a href=https://github.com/codebushi/graphql-anime>view source</a> )</small></h4>
+<p>To keep things simple, I’m going to use <a href=https://github.com/facebook/create-react-app>create-react-app</a> to start things off. Once you have create-react-app installed, we can create our app.</p>
+<pre><code class=language-bash># Create the app
+npx create-react-app anime-graphql
+
+cd anime-graphql
+
+# Install axios, use 'npm install axios' if you don't use yarn
+yarn add axios
+
+# Start the app, browse to http://localhost:3000/
+yarn start
+</code></pre>
+<p>We now have our generic app running and <code>axios</code> is the only additional package we needed to install. Open up <code>src/App.js</code> and strip out the boilerplate JSX until we’re left with this</p>
+<pre><code class=language-jsx>import React, { Component } from 'react';
+import './App.css';
+
+class App extends Component {
+  render() {
+    return (
+      &lt;div>
+
+      &lt;/div>
+    );
+  }
+}
+export default App;
+</code></pre>
+<h3 class="mt-5 mb-3">GraphiQL Explorer</h3>
+<p>AniList has some pretty good <a href=https://anilist.gitbooks.io/anilist-apiv2-docs/graphql/getting-started.html>documentation</a> for their API, including an example GraphQL <code>query</code>. Their example is to get a single anime title by providing an ID. If we want to get a big list of cover images, we’ll need to check out their GraphiQL explorer. In order to use this feature, you’ll need to <a href=https://anilist.co/register>register</a> for free with AniList. You only need to register if you want to play with their explorer, it’s <strong>not required</strong> for our React app.</p>
+<p>Most GraphQL APIs will come with an explorer where you can make test queries and search for possible values. Let’s check out AniList’s <a href=https://anilist.co/graphiql>https://anilist.co/graphiql</a>.</p>
+<p><amp-img src=../img/react-graphiql.png alt="GraphiQL Preview" layout=responsive width=1383 height=741></amp-img></p>
+<p>The left pane is where you can make a query and the right pane is the result once you hit the “play” button. The far right has a Documentation Explorer which shows all the different fields and values. The left pane also has an auto-complete feature, if you hit <code>control+space</code> within a bracket, it will show a popup of all available fields. This is one of the best features of a GraphQL API since you can quickly and easily make a query and just copy and paste it into your app.</p>
+<p>We can plug in a test query to see this in action. Copy the following into the left pane and hit play</p>
+<pre><code class=language-javascript>{
+  Media(id: 1) {
+    id
+    title {
+      romaji
+      english
+      native
+    }
+  }
+}
+</code></pre>
+<p>This will make a <code>Media</code> query with <code>id: 1</code>, and get all the titles associated with it. If you put your cursor above <code>title</code> and hit <code>control+space</code>, you can select any other field from the auto-complete and query for that as well. A GraphQL query will only return the fields you ask for, which eliminates the over-fetching of unnecessary data.</p>
+<p>To get a list of titles, we’ll need to query for a <code>Page</code> and then add <code>media()</code> within that query. Search for <code>Page</code> in the Document Explorer and it will list some additional information. Our query will look something like this:</p>
+<pre><code class=language-javascript>{
+  Page {
+    media(isAdult: false, sort: POPULARITY_DESC) {
+      id
+      title {
+        romaji
+        english
+      }
+      coverImage {
+        large
+      }
+    }
+  }
+}
+</code></pre>
+<p>Note that <code>media()</code> requires at least one argument to work, so we’ll set isAdult to false and add a sort. We can pass additional filters into the media query, like the <code>season</code> and <code>seasonYear</code>. Play around with the auto-complete and the documentations to find available fields. We’re also asking for the coverImage, which will be a url to the image.</p>
+<h3 class="mt-5 mb-3">Making the Query with React.js</h3>
+<p>Once we are happy with the query, we can set things up in our React app. Be sure to import <code>axios</code> and set up some initial state. Using async/await, we create a function called <code>getAnime</code> to request our data. An <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function>async function</a> is newer syntax for handling Promises in JavaScript.</p>
+<pre><code class=language-jsx>// Be sure to import axios
+import axios from 'axios';
+
+class App extends Component {
+
+state = {
+  error: null,
+  isLoaded: false,
+  items: []
+}
+
+getAnime = async (query, variables) => {
+  try {
+    const response = await axios.post('https://graphql.anilist.co', {
+      query,
+      variables
+    });
+
+    // Log the response so we can look at it in the console
+    console.log(response.data)
+
+    // Set the data to the state
+    this.setState(() => ({
+      isLoaded: true,
+      items: response.data.data.Page.media
+    }));
+
+  } catch (error) {
+    // If there's an error, set the error to the state
+    this.setState(() => ({ error }))
+  }
+}
+</code></pre>
+<p>The one and only AniList endpoint is <code>https://graphql.anilist.co</code> which we have to <code>POST</code> to. Using <code>axios.post()</code>, we pass in the endpoint as the first argument and an object with the query as the second argument. When the query is complete, we set the data to the <code>response</code> constant and update the state. Let’s add a <code>componentDidMount()</code> lifecycle method and call <code>this.getAnime()</code> with our <code>query</code>.</p>
+<pre><code class=language-jsx>componentDidMount() {
+
+  // This is the GraphQL query
+  const query = `
+  query {
+    Page {
+      media(isAdult: false, sort: POPULARITY_DESC) {
+        id
+        title {
+          romaji
+          english
+        }
+        coverImage {
+          large
+        }
+      }
+    }
+  }
+  `;
+
+  // These variables are optional, leave empty for now
+  const variables = {};
+
+  // We call the method here to execute our async function
+  this.getAnime(query, variables)
+
+}
+</code></pre>
+<p>For the <code>query</code> constant, we can basically copy out what we have from the GraphiQL explorer and paste it into a template string, adding <code>query</code> before the first bracket. The <code>variables</code> constant is optional and it’s a way of passing variables into the query. Finally we call <code>this.getAnime()</code> and pass in the variables. Open up your browser’s inspector and head into the Network tab, you should see the request and the response in the console!</p>
+<h3 class="mt-5 mb-3">Rendering the Data</h3>
+<p>With the data in hand, the hard part is over. Only thing left is to update our <code>render()</code> method and map out our cover images. We’ll also create a simple component to house each item.</p>
+<pre><code class=language-jsx>// Our simple component for each grid item
+const GridItem = (props) => (
+  &lt;div className="grid__flex">
+    &lt;img className="grid__img" src={props.image} />
+  &lt;/div>
+)
+
+class App extends Component {
+...
+
+// The new render()
+render() {
+
+  const { error, isLoaded, items } = this.state;
+
+  if (error) {
+    return &lt;div>{error.message}&lt;/div>;
+  } else if (!isLoaded) {
+    return &lt;div>Loading...&lt;/div>;
+  } else {
+
+    return (
+      &lt;div className="grid">
+        {items.map(item => (
+          &lt;GridItem key={item.id} image={item.coverImage.large} />
+        ))}
+      &lt;/div>
+    );
+
+  }
+}
+</code></pre>
+<p>You should be seeing the images in your browser! Let’s spice things up a bit with some CSS Grid, open up <code>src/App.css</code> and replace with the following.</p>
+<pre><code class=language-css>html, body {
+  margin: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-flow: dense;
+}
+
+.grid__flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</code></pre>
+<p>Nice, the images should now be showing in a responsive grid! Now try creating a new query with the explorer and copy/paste it into the React App. You can also try out <a href=https://developer.github.com/v4/ >GitHub’s GraphQL API</a> and play with their explorer as well, everything works pretty much the same except you’ll need to generate an OAuth token and add it to your request headers. Here’s a sample of what a GitHub query function looks like.</p>
+<pre><code class=language-jsx>getRepo = async (query, variables) => {
+  try {
+    const response = await axios.post(
+      "https://api.github.com/graphql",
+      {
+        query: gitQuery,
+        variables: variables
+      },
+      {
+        headers: {
+          Authorization: "token YOUR_TOKEN_HERE"
+        }
+      }
+    );
+    console.log(response.data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+</code></pre>
+<h4 class="mt-4 mb-4"><a href=http://graphql-react.surge.sh/ >GraphQL API with React Tutorial</a> <small>( <a href=https://github.com/codebushi/graphql-anime>view source</a> )</small></h4>
+</div>
 </main>
 <amp-analytics type=googleanalytics>
 <script type=application/json>

@@ -6,10 +6,19 @@
     <description>Recent content on Code Bushi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://codebushi.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Siteground vs. Hostgator for Wordpress Hosting</title>
+      <link>https://codebushi.com/siteground-hostgator-wordpress-hosting/</link>
+      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://codebushi.com/siteground-hostgator-wordpress-hosting/</guid>
+      <description>For as long as I can remember, I&amp;rsquo;ve been hosting my Wordpress sites with Hostgator.com without any major issues. They were the most popular option for Wordpress hosting at the time and their prices were very reasonable. Recently a friend of mine wanted to start a new Wordpress site so I looked into some new hosting options with him. I came across Siteground.com a lot during my research and everyone kept raving about their speed and reliability.</description>
+    </item>
     
     <item>
       <title>GraphQL API with React.js</title>

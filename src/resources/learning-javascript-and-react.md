@@ -1,7 +1,7 @@
 ---
 title: Resources for Learning Javascript and React
 date: "2018-04-04"
-dateModified: "2018-04-09"
+dateModified: "2018-08-19"
 path: "/learning-javascript-and-react/"
 image: "./img/resources.jpg"
 description: "My favorite courses and videos for learning Javascript and React.js. Start with vanilla Javascript, incorporate some new ES6 features, and then move onto React.js"

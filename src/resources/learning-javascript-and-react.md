@@ -11,7 +11,7 @@ disclosure: true
 
 Here are some of my favorite courses and videos for learning general Javascript and React.js. I recommend starting with a solid understanding of vanilla Javascript, learning some new ES6 features and techniques, and then finally moving onto React.js.
 
-*Note:* Many of the courses mentioned are from [Udemy.com]((https://click.linksynergy.com/fs-bin/click?id=ML*i/1MCazE&offerid=358574.7&type=3&subid=0)) and are frequently on sale. It seems like every 2 weeks or so, all Udemy courses are discounted to about $10 - $20, so I would recommend waiting a few days if you're not seeing a sale of some sort.
+*Note:* Many of the courses mentioned are from [Udemy.com](https://click.linksynergy.com/fs-bin/click?id=ML*i/1MCazE&offerid=358574.7&type=3&subid=0) and are frequently on sale. It seems like every 2 weeks or so, all Udemy courses are discounted to about $10 - $20, so I would recommend waiting a few days if you're not seeing a sale of some sort.
 
 <h3 class="mt-5 mb-3"><a href="https://click.linksynergy.com/link?id=ML*i/1MCazE&offerid=358574.851712&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fthe-complete-javascript-course%2F">The Complete JavaScript Course</a></h3>
 

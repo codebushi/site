@@ -271,7 +271,7 @@ To audit your PWA, use Google's <a href="https://developers.google.com/web/tools
 
 ![PWA Lighthouse Audit](./img/pwa-react-4.jpg)
 
-You can also [host the app](https://codebushi.com/hosting-your-static-website/) a variety of ways since it's essentially a static website after the build process. If you host the site and visit it using an Android device with Chrome, you'll see the prompt to add the app to your Home Screen. Apple iOS 11.3 and above will also support Progressive Web Apps, but I'm not sure Safari on mobile will pop up a prompt like Chrome does.
+You can also [host the app](https://codebushi.com/hosting-your-static-website/) a variety of ways since it's essentially a static website after the build process. Visit your hosted app or the <a href="https://preactnews.netlify.com/" target="_blank">example app</a> using an Android device with Chrome, and you'll see the prompt to add the app to your Home Screen. Apple iOS 11.3 and above will also support Progressive Web Apps, but I'm not sure Safari on mobile will pop up a prompt like Chrome does.
 
 Hopefully this was a good intro into Progressive Web Apps. You can take things further by experimenting with more of Google Workbox's recipes and features, making your PWA even better!
 

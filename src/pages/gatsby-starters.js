@@ -59,11 +59,11 @@ class GatsbyStarters extends React.Component {
                     <div className="row align-items-center">
                         <div className="col-md-6">
                             <div className="p-5 text-center">
-                                <h2 className="mb-4">Gatsby Dimension</h2>
-                                <p className="lead mb-4">A fully responsive, single page React.js website template. Built using Gatsby.js and designed by <a href="https://html5up.net/dimension">HTML5 UP</a>. Great for a quick profile or portfolio site.</p>
+                                <h2 className="mb-4">Gatsby Dimension V2</h2>
+                                <p className="lead mb-4">A fully responsive, single page React.js website template. Built using Gatsby.js and designed by <a href="https://html5up.net/dimension">HTML5 UP</a>. Great for a quick profile or portfolio site. <em>Updated to Gatsby V2!</em></p>
                                 <p>
-                                    <a href="http://gatsby-dimension.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
-                                    <a href="https://github.com/ChangoMan/gatsby-starter-dimension" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
+                                    <a href="http://gatsby-dimension-v2.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
+                                    <a href="https://github.com/codebushi/gatsby-starter-dimension-v2" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
                                 </p>
                             </div>
                         </div>

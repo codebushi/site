@@ -60,7 +60,7 @@ class GatsbyStarters extends React.Component {
                         <div className="col-md-6">
                             <div className="p-5 text-center">
                                 <h2 className="mb-4">Gatsby Dimension V2</h2>
-                                <p className="lead mb-4">A fully responsive, single page React.js website template. Built using Gatsby.js and designed by <a href="https://html5up.net/dimension">HTML5 UP</a>. Great for a quick profile or portfolio site. <em>Updated to Gatsby V2!</em></p>
+                                <p className="lead mb-4">A fully responsive, single page React.js website template. Built using Gatsby.js and designed by HTML5 UP. Great for a quick profile or portfolio site. <em>Updated to Gatsby V2!</em></p>
                                 <p>
                                     <a href="http://gatsby-dimension-v2.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
                                     <a href="https://github.com/codebushi/gatsby-starter-dimension-v2" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
@@ -77,11 +77,11 @@ class GatsbyStarters extends React.Component {
                     <div className="row align-items-center">
                         <div className="col-md-6 order-md-2">
                             <div className="p-5 text-center">
-                                <h2 className="mb-4">Gatsby Forty</h2>
-                                <p className="lead mb-4">A colorful website template featuring a landing page, two hero banner styles, and a generic page. Built using Gatsby.js and designed by <a href="https://html5up.net/forty">HTML5 UP</a>.</p>
+                                <h2 className="mb-4">Gatsby Forty V2</h2>
+                                <p className="lead mb-4">A colorful website template featuring a landing page, two hero banner styles, and a generic page. Built using Gatsby.js and designed by HTML5 UP. <em>Updated to Gatsby V2!</em></p>
                                 <p>
-                                    <a href="http://gatsby-forty.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
-                                    <a href="https://github.com/ChangoMan/gatsby-starter-forty" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
+                                    <a href="http://gatsby-forty-v2.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
+                                    <a href="https://github.com/codebushi/gatsby-starter-forty-v2" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
                                 </p>
                             </div>
                         </div>
@@ -96,7 +96,7 @@ class GatsbyStarters extends React.Component {
                         <div className="col-md-6">
                             <div className="p-5 text-center">
                                 <h2 className="mb-4">Gatsby Strata</h2>
-                                <p className="lead mb-4">This super simple site features a lightbox style photo gallery. Fully responsive and perfect for displaying your work. Designed by <a href="https://html5up.net/strata">HTML5 UP</a>.</p>
+                                <p className="lead mb-4">This super simple site features a lightbox style photo gallery. Fully responsive and perfect for displaying your work. Designed by HTML5 UP.</p>
                                 <p>
                                     <a href="http://gatsby-strata.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
                                     <a href="https://github.com/ChangoMan/gatsby-starter-strata" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
@@ -114,7 +114,7 @@ class GatsbyStarters extends React.Component {
                         <div className="col-md-6 order-md-2">
                             <div className="p-5 text-center">
                                 <h2 className="mb-4">Gatsby Stellar</h2>
-                                <p className="lead mb-4">A scroll friendly, responsive site. Supports single or multiple pages. Has smooth scrolling to the different sections of the page. Designed by <a href="https://html5up.net/stellar">HTML5 UP</a>.</p>
+                                <p className="lead mb-4">A scroll friendly, responsive site. Supports single or multiple pages. Has smooth scrolling to the different sections of the page. Designed by HTML5 UP.</p>
                                 <p>
                                     <a href="http://gatsby-stellar.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
                                     <a href="https://github.com/codebushi/gatsby-starter-stellar" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
@@ -132,7 +132,7 @@ class GatsbyStarters extends React.Component {
                         <div className="col-md-6">
                             <div className="p-5 text-center">
                                 <h2 className="mb-4">Gatsby Photon</h2>
-                                <p className="lead mb-4">Great single page site that can be a landing page or a portfolio website. Custom grid elements made with CSS Grid! Original design by <a href="https://html5up.net/photon">HTML5 UP</a>.</p>
+                                <p className="lead mb-4">Great single page site that can be a landing page or a portfolio website. Custom grid elements made with CSS Grid! Original design by HTML5 UP.</p>
                                 <p>
                                     <a href="http://gatsby-photon.surge.sh/" title="Preview Template" className="social-icon-link u-link-white" target="blank"><span className="fi-monitor"></span></a>
                                     <a href="https://github.com/codebushi/gatsby-starter-photon" title="View code on Github" className="social-icon-link u-link-white" target="blank"><span className="fi-social-github"></span></a>
@@ -182,7 +182,7 @@ class GatsbyStarters extends React.Component {
                         <div className="gatsby-highlight">
                             <pre className="language-bash">
                                 <code className="language-bash">
-                                    <span className="token function">gatsby new</span> gatsby-starter-dimension https://github.com/ChangoMan/gatsby-starter-dimension
+                                    <span className="token function">gatsby new</span> gatsby-starter-dimension https://github.com/codebushi/gatsby-starter-dimension-v2
                                 </code>
                             </pre>
                         </div>

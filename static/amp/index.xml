@@ -6,10 +6,28 @@
     <description>Recent content on Code Bushi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://codebushi.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue.js and Chart.js Weather API Example</title>
+      <link>https://codebushi.com/vuejs-with-chartjs-api-example/</link>
+      <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://codebushi.com/vuejs-with-chartjs-api-example/</guid>
+      <description>Recently I was asked to add some fancy charts and graphs to an existing Wordpress website. In the past, my weapon of choice would be either jQuery or Angular.js for a task such as this, but I decided to try the popular Vue.js. Vue.js is a progressive javascript framework, which means it&amp;rsquo;s extremely easy to add it to an existing website and get started. For this tutorial, I&amp;rsquo;m going to start with a simple HTML boilerplate file and add Vue.</description>
+    </item>
+    
+    <item>
+      <title>Progressive Web Apps with React &amp; Preact.js</title>
+      <link>https://codebushi.com/pwa-with-react-and-preact/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://codebushi.com/pwa-with-react-and-preact/</guid>
+      <description>Progressive Web Apps (PWA) have come onto the scene in a big way and with more mobile browsers supporting them, they might very well be the future of web applications. A PWA is actually pretty simple, and virtually any website or application can be converted into a baseline Progressive Web App. Here is a checklist from Google on all the things a website needs in order to be considered a PWA.</description>
+    </item>
     
     <item>
       <title>Siteground vs. Hostgator for Wordpress Hosting</title>

@@ -6,7 +6,7 @@
 
 <html amp lang="en-us" class="no-js">
 <head>
-    <title>Featured Blog Images In Gatsby.js</title>
+    <title>Vue.js and Chart.js Weather API Example</title>
     <meta charset="utf-8">
 
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -23,10 +23,10 @@
 
 
 
-    <link rel="canonical" href="https://codebushi.com/gatsby-featured-images/">
+    <link rel="canonical" href="https://codebushi.com/vuejs-with-chartjs-api-example/">
     <link rel="icon" type="image/x-icon" href="https://codebushi.com/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <meta name="description" content="Adding a cover or featured image to Gatsby.js blog posts.">
+    <meta name="description" content="Use Vue.js and Chart.js to add charts/graphs to an existing website. Get weather data using Axios and the OpenWeatherMap API, then chart the temperatues by city.">
 
     
 
@@ -85,8 +85,8 @@
         "@type": "ListItem",
         "position": 2,
         "item": {
-          "@id": "https://codebushi.com/gatsby-featured-images/",
-          "name": "gatsby-featured-images"
+          "@id": "https://codebushi.com/vuejs-with-chartjs-api-example/",
+          "name": "vuejs-with-chartjs-api-example"
         }
     }]
 }
@@ -99,19 +99,19 @@
   "author": {
     "name" : "Hunter Chang"
   },
-  "headline": "Featured Blog Images In Gatsby.js",
-  "description": "Adding a cover or featured image to Gatsby.js blog posts.",
-  "wordCount": 1075,
-  "datePublished" : "2017-11-24",
-  "dateModified" : "2017-11-24",
+  "headline": "Vue.js and Chart.js Weather API Example",
+  "description": "Use Vue.js and Chart.js to add charts/graphs to an existing website. Get weather data using Axios and the OpenWeatherMap API, then chart the temperatues by city.",
+  "wordCount": 1515,
+  "datePublished" : "2018-09-13",
+  "dateModified" : "2018-09-13",
   "image" : {
       "@context": "http://schema.org",
       "@type": "ImageObject",
-      "url": "https://codebushi.com/amp/img/gatsby-featured-image.jpg",
+      "url": "https://codebushi.com/amp/img/vuejs-chartjs.jpg",
       "height" : 503,
       "width" : 920
     },
-  "mainEntityOfPage" : "https://codebushi.com/gatsby-featured-images/",
+  "mainEntityOfPage" : "https://codebushi.com/vuejs-with-chartjs-api-example/",
   "publisher" : {
     "@type": "Organization",
     "name" : "codebushi.com",
@@ -144,215 +144,348 @@
 
 
 <main>
-    <h1>Featured Blog Images In Gatsby.js</h1>
+    <h1>Vue.js and Chart.js Weather API Example</h1>
     <div>
-        <p><small>November 24, 2017</small></p>
+        <p><small>September 13, 2018</small></p>
     </div>
     <div>
-        <p><amp-img src="https://codebushi.com/amp/img/gatsby-featured-image.jpg" alt="" layout="responsive" width="920" height="503"></amp-img></p>
+        <p><amp-img src="https://codebushi.com/amp/img/vuejs-chartjs.jpg" alt="" layout="responsive" width="920" height="503"></amp-img></p>
     </div>
     <div>
-        <p>With <a href="https://www.gatsbyjs.org/">Gatsby.js</a>, it&rsquo;s pretty easy to get a static site up and running with one of their starter templates. The <code>gatsby-starter-blog</code> (<a href="https://github.com/gatsbyjs/gatsby-starter-blog">https://github.com/gatsbyjs/gatsby-starter-blog</a>) demonstrates how a Gatsby static site can function with blog posts written in markdown files. There is a list of blog posts on the homepage, but it would be nice to see a featured image with each post. Let&rsquo;s dive into the <code>gatsby-starter-blog</code> and associate a featured or cover image to a markdown post.</p>
+        <p>Recently I was asked to add some fancy charts and graphs to an existing Wordpress website. In the past, my weapon of choice would be either jQuery or Angular.js for a task such as this, but I decided to try the popular <a href="https://vuejs.org/">Vue.js</a>. Vue.js is a progressive javascript framework, which means it&rsquo;s extremely easy to add it to an existing website and get started. For this tutorial, I&rsquo;m going to start with a simple HTML boilerplate file and add Vue.js at the bottom in a <code>&lt;script&gt;</code> tag. We&rsquo;ll hit the OpenWeatherMap API to get some weather data and chart the temperatures with Chart.js.</p>
 
-<h4 class="mt-4 mb-4"><a href="http://hc-gatsby-featured-image-demo.surge.sh/">Gatsby Featured Image Demo</a> <small>( <a href="https://github.com/ChangoMan/gatsby-featured-image-demo">view source</a> )</small></h4>
+<p>If you&rsquo;re new to Vue.js, I highly recommend going through their <a href="https://vuejs.org/v2/guide/">introduction guide</a> first. It covers some important basics and the structure of a Vue application.</p>
 
-<p>Start by installing the <a href="https://github.com/gatsbyjs/gatsby-starter-blog">gatsby-starter-blog</a> official starter.</p>
+<h4 class="mt-4 mb-4"><a href="http://vuejs-chartjs.surge.sh/">Vue.js and Chart.js Weather API Example</a> <small>( <a href="https://github.com/codebushi/vuejs-chartjs-example">view source</a> )</small></h4>
 
-<pre><code class="language-bash">gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog
-cd gatsby-blog
-gatsby develop
-</code></pre>
+<p>Before we start, I want to note that Vue.js also has a <a href="https://cli.vuejs.org/">CLI</a>, which works similar to React&rsquo;s Create-React-App. The Vue CLI is great for JavaScript apps built with Vue.js from the beginning. For our purposes, however, we&rsquo;ll be adding Vue to an &ldquo;existing site&rdquo; and won&rsquo;t need to use the CLI. This also means we don&rsquo;t need to worry about any Webpack configurations or build/deploy commands.</p>
 
-<p>Open up your browser and head to  <code>http://localhost:8000/</code> to see the starter Gatsby site. You can see three blog posts on the homepage, but no images are associated with them. Let&rsquo;s fix that!</p>
+<p>Our existing HTML file looks like this:</p>
 
-<h3 class="mt-5 mb-3">Exploring the file structure and plugins</h3>
-
-<p>First, let&rsquo;s explore how this site is working right now. If we look at the file structure of this site, it looks like this:</p>
-
-<p><a href="https://i.imgur.com/Mz1c2La.png">Gatsby Starter Blog File Structure</a></p>
-
-<p>We can see that all the blog posts live in the <code>/src/pages</code> directory, in their own separate folder. There is an image in the <code>hello-world</code> post, but that is not a featured image that we can query on the homepage. The <code>index.js</code> that&rsquo;s in <code>/src/pages</code> is the React component for the homepage.</p>
-
-<p>If we open up <code>gatsby-config.js</code>, we can see the plugins used for processing the <code>/src/pages</code> directory:</p>
-
-<pre><code class="language-javascript">plugins: [
-{
-  resolve: `gatsby-source-filesystem`,
-  options: {
-    path: `${__dirname}/src/pages`,
-    name: 'pages',
-  },
-},
-{
-  resolve: `gatsby-transformer-remark`,
-  options: {
-    plugins: [
-      {
-        resolve: `gatsby-remark-images`,
-        options: {
-          maxWidth: 590,
-        },
-      },
-      {
-        resolve: `gatsby-remark-responsive-iframe`,
-        options: {
-          wrapperStyle: `margin-bottom: 1.0725rem`,
-        },
-      },
-      'gatsby-remark-prismjs',
-      'gatsby-remark-copy-linked-files',
-      'gatsby-remark-smartypants',
-    ],
-  },
-},
-`gatsby-transformer-sharp`,
-`gatsby-plugin-sharp`,
-</code></pre>
-
-<p>The first plugin is <a href="https://www.gatsbyjs.org/packages/gatsby-source-filesystem/">gatsby-source-filesystem</a> and the path of <code>/src/pages</code> is added there as an option. This is telling Gatsby to look in that directory and make the files there available to query in GraphQL.</p>
-
-<p>Since our markdown files are in there, the second plugin, <a href="https://www.gatsbyjs.org/packages/gatsby-transformer-remark/">gatsby-transformer-remark</a>, will parse the markdown files into usable data nodes for GraphQL.</p>
-
-<p>The last two plugins, <a href="https://www.gatsbyjs.org/packages/gatsby-transformer-sharp/">gatsby-transformer-sharp</a> and <a href="https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/">gatsby-plugin-sharp</a>, are what we&rsquo;ll need later to process and query our featured images.</p>
-
-<h3 class="mt-5 mb-3">Adding a featured image to a blog post</h3>
-
-<p>Open up the markdown file for the latest blog post, titled &ldquo;New Beginnings&rdquo; here <code>/src/pages/hi-folks/index.md</code>. At the top, you&rsquo;ll see some info for the post, known as &ldquo;frontmatter&rdquo;</p>
-
-<pre><code class="language-markdown">---
-title: New Beginnings
-date: &quot;2015-05-28T22:40:32.169Z&quot;
----
-</code></pre>
-
-<p>Here we see the title of the post and the date published. We can add a path to our featured image here like so:</p>
-
-<pre><code class="language-markdown">---
-title: New Beginnings
-date: &quot;2015-05-28T22:40:32.169Z&quot;
-featuredImage: &quot;./featured-image.jpg&quot;
----
-</code></pre>
-
-<p>Head over to <a href="https://unsplash.com/">https://unsplash.com/</a> and download a free stock image, saving it as <code>featured-image.jpg</code> in our post directory <code>/src/pages/hi-folks</code>.</p>
-
-<p>Since we&rsquo;re here, might as well add images to the other two posts. *<em>Update</em>* - You&rsquo;ll actually need a featuredImage for all of your posts right now, or else you&rsquo;ll get an error <code>Cannot read property 'childImageSharp' of null</code> when trying to render your page.</p>
-
-<p>Go ahead and download two more images, save them in the other two blogs at <code>/src/pages/hello-world</code> and <code>/src/pages/my-second-post</code>. Make sure to save all the images with the name <code>featured-image.jpg</code> Open up their respective index.md files and add <code>featuredImage: &quot;./featured-image.jpg&quot;</code> to the frontmatter. <em>Double check your image names and make sure they match what&rsquo;s in your frontmatter!</em></p>
-
-<p>You can always save the images under a different name, just make sure your frontmatter reflects this.</p>
-
-<h3 class="mt-5 mb-3">Displaying the featured image in the homepage query</h3>
-
-<p>In order to display our new featured image, we&rsquo;re going to install a Gatsby React component called <a href="https://www.gatsbyjs.org/packages/gatsby-image/">gatsby-image</a>. From the terminal, let&rsquo;s stop our gatsby develop process and then install the gatsby-image component:</p>
-
-<pre><code class="language-bash">yarn add gatsby-image
-</code></pre>
-
-<p>Check out my <a href="https://hunterchang.com/using-gatsby-image/">previous post about gatsby-image</a> to learn more about it.</p>
-
-<p>Open up the homepage component at <code>/src/pages/index.js</code>. If we go to the bottom of this React component, we&rsquo;ll see the GraphQL query:</p>
-
-<pre><code class="language-jsx">export const pageQuery = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: &quot;DD MMMM, YYYY&quot;)
-            title
-          }
-        }
-      }
-    }
-  }
-`
-</code></pre>
-
-<p>Under the <code>allMarkdownRemark</code> field, you&rsquo;ll see the <code>frontmatter</code> data we looked at earlier. We will add the <code>featuredImage</code> field here just below the title, so your query now looks like this:</p>
-
-<pre><code class="language-jsx">export const pageQuery = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: &quot;DD MMMM, YYYY&quot;)
-            title
-            featuredImage {
-                childImageSharp{
-                    sizes(maxWidth: 630) {
-                        ...GatsbyImageSharpSizes
-                    }
-                }
-            }
-          }
-        }
-      }
-    }
-  }
-`
-</code></pre>
-
-<p>The <code>childImageSharp</code> part is using the two Gatsby sharp plugins we mentioned earlier to process the images. <code>...GatsbyImageSharpSizes</code> is from the <code>gatsby-image</code> component we installed earlier, you can learn more about the  different image types available from the official <a href="https://www.gatsbyjs.org/packages/gatsby-image/">gatsby-image page</a>. Since our featured image will be fluid, we are using the <code>sizes</code> option with a maxWidth of 630px to match our content&rsquo;s container.</p>
-
-<p>Let&rsquo;s start up <code>gatsby-develop</code> again and add our image. Up at the top of <code>/src/pages/index.js</code>, we&rsquo;ll import the <code>gatsby-image</code> component right below the Bio component:</p>
-
-<pre><code class="language-jsx">import Bio from '../components/Bio'
-import Img from 'gatsby-image'
-import { rhythm } from '../utils/typography'
-</code></pre>
-
-<p>In our <code>posts.map()</code> function, we&rsquo;ll add the <code>&lt;Img /&gt;</code> component right below the <code>&lt;h3&gt;</code> and pass it the props for sizes. Your <code>return()</code> statement should now look like this:</p>
-
-<pre><code class="language-jsx">return (
-  &lt;div&gt;
-    &lt;Helmet title={siteTitle} /&gt;
-    &lt;Bio /&gt;
-    {posts.map(({ node }) =&gt; {
-      const title = get(node, 'frontmatter.title') || node.fields.slug
-      return (
-        &lt;div key={node.fields.slug}&gt;
-          &lt;h3
-            style={{
-              marginBottom: rhythm(1 / 4),
-            }}
-          &gt;
-            &lt;Link style={{ boxShadow: 'none' }} to={node.fields.slug}&gt;
-              {title}
-            &lt;/Link&gt;
-          &lt;/h3&gt;
-          &lt;Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} /&gt;
-          &lt;small&gt;{node.frontmatter.date}&lt;/small&gt;
-          &lt;p dangerouslySetInnerHTML={{ __html: node.excerpt }} /&gt;
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Vue.js Example With Chart.js&lt;/title&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css&quot; integrity=&quot;sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B&quot; crossorigin=&quot;anonymous&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;my-5&quot;&gt;
+          &lt;form&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-md-6 offset-md-3&quot;&gt;
+                &lt;h5&gt;Enter A City:&lt;/h5&gt;
+                &lt;div class=&quot;input-group&quot;&gt;
+                  &lt;input type=&quot;text&quot; class=&quot;form-control&quot;&gt;
+                  &lt;div class=&quot;input-group-append&quot;&gt;
+                    &lt;button class=&quot;btn btn-outline-secondary&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
         &lt;/div&gt;
-      )
-    })}
-  &lt;/div&gt;
-)
+        &lt;div class=&quot;my-5&quot;&gt;
+          &lt;div class=&quot;alert alert-info&quot;&gt;
+            Loading...
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;canvas id=&quot;myChart&quot;&gt;&lt;/canvas&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
-<p>You should now see the featured images show up in the query of posts! However, if we click into a blog post, the featured image doesn&rsquo;t show up. No worries, the component for a blog post is located at <code>/src/templates/blog-post.js</code>. If you open up that file, it will look pretty similar to the index.js component. You can do the same thing here, add the <code>featuredImage</code> field to the GraphQL query at the bottom, import the <code>gatsby-image</code> component, and add the <code>&lt;Img /&gt;</code> tag on the page. Now your blog has sweet featured images that are optimized and will lazy load in!</p>
+<p>It&rsquo;s a simple HTML file with some Bootstrap grid and form elements. Imagine this being any existing website you&rsquo;ll need to work on.</p>
 
-<h4><a href="http://hc-gatsby-featured-image-demo.surge.sh/">Finished Product</a> <small>( <a href="https://github.com/ChangoMan/gatsby-featured-image-demo">view source</a> )</small></h4>
+<h3 class="mt-5 mb-3">Adding Vue.js and Chart.js</h3>
+
+<p>In order to use Vue.js and the other JavaScript tools, we&rsquo;ll need to add their <code>&lt;script&gt;</code> tags to our page. If you have access to the site&rsquo;s entire template, these can be added right after the <code>&lt;/body&gt;</code> tag. If you don&rsquo;t want to load these scripts on every page of your site, they can be added to the bottom of whichever page you are working on.</p>
+
+<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Here we load Vue.js, Moment.js for date/time formatting, Chart.js, Axios to make our API requests, and main.js which will contain our own code. Note that these scripts are loaded one by one, which isn&rsquo;t ideal. One of the benefits of using the Vue CLI is the ability to bundle all the necessary JavaScript files and optimize loading, but we don&rsquo;t always have that luxury when working with old websites.</p>
+
+<h3 class="mt-5 mb-3">Using Axios to get weather data from the API</h3>
+
+<p>The first step of this app is getting some weather data from the OpenWeatherMap API. I chose to use the <a href="https://openweathermap.org/forecast5">5 day forecast</a> since it&rsquo;s available on the free tier. You can sign up for free with OpenWeatherMap to get your own appid key, which is needed at the end of every query.</p>
+
+<p>In our <code>main.js</code> we&rsquo;ll initialize our Vue app and create a method to get our data.</p>
+
+<pre><code class="language-javascript">var app = new Vue({
+  el: &quot;#app&quot;,
+  data: {
+    chart: null,
+    city: &quot;&quot;,
+    dates: [],
+    temps: [],
+    loading: false,
+    errored: false
+  },
+  methods: {
+    getData: function() {
+
+      this.loading = true;
+
+      axios
+        .get(&quot;https://api.openweathermap.org/data/2.5/forecast&quot;, {
+          params: {
+            q: this.city,
+            units: &quot;imperial&quot;,
+            appid: &quot;Your OpenWeatherMap Key here&quot;
+          }
+        })
+        .then(response =&gt; {
+          console.log(response)
+        })
+        .catch(error =&gt; {
+          console.log(error);
+          this.errored = true;
+        })
+        .finally(() =&gt; (this.loading = false));
+    }
+  }
+});
+</code></pre>
+
+<p>The <code>getData</code> method contains the Axios query we&rsquo;ll be making. The only missing field we need is <code>this.city</code> which we&rsquo;ll need from the form. Let&rsquo;s hook up our HTML to this Vue app.</p>
+
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Vue.js Example With Chart.js&lt;/title&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css&quot; integrity=&quot;sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B&quot; crossorigin=&quot;anonymous&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;my-5&quot;&gt;
+          &lt;form v-on:submit.prevent=&quot;getData&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-md-6 offset-md-3&quot;&gt;
+                &lt;h5&gt;Enter A City:&lt;/h5&gt;
+                &lt;div class=&quot;input-group&quot;&gt;
+                  &lt;input type=&quot;text&quot; class=&quot;form-control&quot; v-model=&quot;city&quot;&gt;
+                  &lt;div class=&quot;input-group-append&quot;&gt;
+                    &lt;button class=&quot;btn btn-outline-secondary&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;my-5&quot;&gt;
+          &lt;div class=&quot;alert alert-info&quot; v-show=&quot;loading&quot;&gt;
+            Loading...
+          &lt;/div&gt;
+          &lt;div v-show=&quot;chart != null&quot;&gt;
+            &lt;canvas id=&quot;myChart&quot;&gt;&lt;/canvas&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>As you can see, most of the HTML is unchanged. The only parts that need to be added are the various <code>v-</code> attributes. Let&rsquo;s quickly go over the changes.</p>
+
+<pre><code class="language-html">&lt;form v-on:submit.prevent=&quot;getData&quot;&gt;
+</code></pre>
+
+<p>This line hooks up our form to our <code>getData</code> method, and fires whenever the form is submitted. The default action of a form submit is to reload the page, so the <code>.prevent</code> acts like a <code>event.preventDefault()</code>.</p>
+
+<pre><code class="language-html">&lt;input type=&quot;text&quot; class=&quot;form-control&quot; v-model=&quot;city&quot;&gt;
+</code></pre>
+
+<p>This binds the input field to our Vue app&rsquo;s <code>data.city</code>, and can then be access in the <code>getData</code> method via <code>this.city</code>. This is how we change the city based on the user input.</p>
+
+<pre><code class="language-html">&lt;div class=&quot;alert alert-info&quot; v-show=&quot;loading&quot;&gt;
+Loading...
+&lt;/div&gt;
+</code></pre>
+
+<p>The <code>v-show</code> parts are optional, but it makes for a better UI experience. It will show the loading alert when the app is in the loading state, and hide it once the loading is complete, after the query successfully gets the data.</p>
+
+<p>With these pieces in place, you can try our the query. Enter a city and submit the form. Open up your console and you should see the log of data from the API!</p>
+
+<h3 class="mt-5 mb-3">Formatting the data for Chart.js</h3>
+
+<p>Once we get our data, we&rsquo;ll need to organize it into arrays for Chart.js to use. We will have an array of dates for the x-axis and an array of temperature values for the y-axis.</p>
+
+<p>In our <code>main.js</code>, replace the <code>console.log(response)</code> with the following:</p>
+
+<pre><code class="language-javascript">.then(response =&gt; {
+  this.dates = response.data.list.map(list =&gt; {
+    return list.dt_txt;
+  });
+
+  this.temps = response.data.list.map(list =&gt; {
+    return list.main.temp;
+  });
+})
+</code></pre>
+
+<p>This sets our <code>data.dates</code> and <code>data.temps</code> to the mapped arrays. Note that we are using an arrow function in the <code>.then()</code>, which is binding the <code>this.dates</code> and <code>this.temps</code> properly. If you can&rsquo;t use arrow functions, be sure to add <code>.bind(this)</code> after your function.</p>
+
+<h3 class="mt-5 mb-3">Charting the data with Chart.js</h3>
+
+<p>Once the data is formatted, we can initialize a new Chart and plug in the data. When working with Chart.js, or any other charting library, much of the legwork is formatting the chart properly. I highly recommend going through the <a href="http://www.chartjs.org/docs/latest/">Chart.js docs</a> and checking out their samples to see the different options available. Depending on the data you are charting, the tooltips and X or Y axis may need to be adjusted to display the proper units for the data.</p>
+
+<p>I&rsquo;ve gone through and formatted the Chart.js options already for this demo, feel free to look at the options and make any changes needed.</p>
+
+<p>Our final <code>main.js</code> file now looks like this:</p>
+
+<pre><code class="language-javascript">var app = new Vue({
+  el: &quot;#app&quot;,
+  data: {
+    chart: null,
+    city: &quot;&quot;,
+    dates: [],
+    temps: [],
+    loading: false,
+    errored: false
+  },
+  methods: {
+    getData: function() {
+      this.loading = true;
+
+      if (this.chart != null) {
+        this.chart.destroy();
+      }
+
+      axios
+        .get(&quot;https://api.openweathermap.org/data/2.5/forecast&quot;, {
+          params: {
+            q: this.city,
+            units: &quot;imperial&quot;,
+            appid: &quot;fd3150a661c1ddc90d3aefdec0400de4&quot;
+          }
+        })
+        .then(response =&gt; {
+          this.dates = response.data.list.map(list =&gt; {
+            return list.dt_txt;
+          });
+
+          this.temps = response.data.list.map(list =&gt; {
+            return list.main.temp;
+          });
+
+          var ctx = document.getElementById(&quot;myChart&quot;);
+          this.chart = new Chart(ctx, {
+            type: &quot;line&quot;,
+            data: {
+              labels: this.dates,
+              datasets: [
+                {
+                  label: &quot;Avg. Temp&quot;,
+                  backgroundColor: &quot;rgba(54, 162, 235, 0.5)&quot;,
+                  borderColor: &quot;rgb(54, 162, 235)&quot;,
+                  fill: false,
+                  data: this.temps
+                }
+              ]
+            },
+            options: {
+              title: {
+                display: true,
+                text: &quot;Temperature with Chart.js&quot;
+              },
+              tooltips: {
+                callbacks: {
+                  label: function(tooltipItem, data) {
+                    var label =
+                      data.datasets[tooltipItem.datasetIndex].label || &quot;&quot;;
+
+                    if (label) {
+                      label += &quot;: &quot;;
+                    }
+
+                    label += Math.floor(tooltipItem.yLabel);
+                    return label + &quot;°F&quot;;
+                  }
+                }
+              },
+              scales: {
+                xAxes: [
+                  {
+                    type: &quot;time&quot;,
+                    time: {
+                      unit: &quot;hour&quot;,
+                      displayFormats: {
+                        hour: &quot;M/DD @ hA&quot;
+                      },
+                      tooltipFormat: &quot;MMM. DD @ hA&quot;
+                    },
+                    scaleLabel: {
+                      display: true,
+                      labelString: &quot;Date/Time&quot;
+                    }
+                  }
+                ],
+                yAxes: [
+                  {
+                    scaleLabel: {
+                      display: true,
+                      labelString: &quot;Temperature (°F)&quot;
+                    },
+                    ticks: {
+                      callback: function(value, index, values) {
+                        return value + &quot;°F&quot;;
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          });
+        })
+        .catch(error =&gt; {
+          console.log(error);
+          this.errored = true;
+        })
+        .finally(() =&gt; (this.loading = false));
+    }
+  }
+});
+</code></pre>
+
+<p>Most of the chart is made up of options, which never really change after they are set to your liking. The parts that do change are <code>data.labels</code> and <code>data.datasets</code>. You can see that we plug in our <code>this.dates</code> and <code>this.temps</code> arrays into these areas of the chart.</p>
+
+<p>We also set <code>this.chart</code> to the newly created chart. Notice this new condition right before the Axios query:</p>
+
+<pre><code class="language-javascript">if (this.chart != null) {
+  this.chart.destroy();
+}
+</code></pre>
+
+<p>This is used when more than once city is queried, it will destroy the old chart before making a new one to avoid any data overlapping.</p>
+
+<p>That&rsquo;s it! The app now gets data based on the city you input and charts out the temperatures. Try experimenting with the different Chart.js options or adding a toggle for a °F to °C.</p>
+
+<h4 class="mt-4 mb-4"><a href="http://vuejs-chartjs.surge.sh/">Vue.js and Chart.js Weather API Example</a> <small>( <a href="https://github.com/codebushi/vuejs-chartjs-example">view source</a> )</small></h4>
 
     </div>
 </main>

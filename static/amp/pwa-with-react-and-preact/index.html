@@ -6,7 +6,7 @@
 
 <html amp lang="en-us" class="no-js">
 <head>
-    <title>React YouTube Video Background</title>
+    <title>Progressive Web Apps with React &amp; Preact.js</title>
     <meta charset="utf-8">
 
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -23,10 +23,10 @@
 
 
 
-    <link rel="canonical" href="https://codebushi.com/react-youtube-background/">
+    <link rel="canonical" href="https://codebushi.com/pwa-with-react-and-preact/">
     <link rel="icon" type="image/x-icon" href="https://codebushi.com/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <meta name="description" content="Static website using Gatsby.js and React, using a YouTube video as the background.">
+    <meta name="description" content="Explore Progressive Web Apps with React.js and build a News Feed PWA using Preact.js and a custom Service Worker with Google&#39;s Workbox.">
 
     
 
@@ -85,8 +85,8 @@
         "@type": "ListItem",
         "position": 2,
         "item": {
-          "@id": "https://codebushi.com/react-youtube-background/",
-          "name": "react-youtube-background"
+          "@id": "https://codebushi.com/pwa-with-react-and-preact/",
+          "name": "pwa-with-react-and-preact"
         }
     }]
 }
@@ -99,19 +99,19 @@
   "author": {
     "name" : "Hunter Chang"
   },
-  "headline": "React YouTube Video Background",
-  "description": "Static website using Gatsby.js and React, using a YouTube video as the background.",
-  "wordCount": 675,
-  "datePublished" : "2017-12-11",
-  "dateModified" : "2017-12-11",
+  "headline": "Progressive Web Apps with React &amp; Preact.js",
+  "description": "Explore Progressive Web Apps with React.js and build a News Feed PWA using Preact.js and a custom Service Worker with Google&#39;s Workbox.",
+  "wordCount": 1715,
+  "datePublished" : "2018-09-05",
+  "dateModified" : "2018-09-05",
   "image" : {
       "@context": "http://schema.org",
       "@type": "ImageObject",
-      "url": "https://codebushi.com/amp/img/react-youtube.jpg",
+      "url": "https://codebushi.com/amp/img/pwa-react-preact.jpg",
       "height" : 503,
       "width" : 920
     },
-  "mainEntityOfPage" : "https://codebushi.com/react-youtube-background/",
+  "mainEntityOfPage" : "https://codebushi.com/pwa-with-react-and-preact/",
   "publisher" : {
     "@type": "Organization",
     "name" : "codebushi.com",
@@ -144,152 +144,276 @@
 
 
 <main>
-    <h1>React YouTube Video Background</h1>
+    <h1>Progressive Web Apps with React &amp; Preact.js</h1>
     <div>
-        <p><small>December 11, 2017</small></p>
+        <p><small>September 5, 2018</small></p>
     </div>
     <div>
-        <p><amp-img src="https://codebushi.com/amp/img/react-youtube.jpg" alt="" layout="responsive" width="920" height="503"></amp-img></p>
+        <p><amp-img src="https://codebushi.com/amp/img/pwa-react-preact.jpg" alt="" layout="responsive" width="920" height="503"></amp-img></p>
     </div>
     <div>
-        <p>The first time I saw a video background on a website, I became obsessed. I thought parallax backgrounds were cool, but this was on a different level! Most video backgrounds use the video tag, paired with a small video file that&rsquo;s optimized for the web. With some CSS, you can set the looping video as a background. There are some sites that offer free video backgrounds for download, such as <a href="https://coverr.co/">https://coverr.co/</a>.</p>
+        <p>Progressive Web Apps (PWA) have come onto the scene in a big way and with more mobile browsers supporting them, they might very well be the future of web applications. A PWA is actually pretty simple, and virtually any website or application can be converted into a baseline Progressive Web App. Here is a <a href="https://developers.google.com/web/progressive-web-apps/checklist" target="_blank">checklist</a> from Google on all the things a website needs in order to be considered a PWA. Basically if you have a website or web application that loads fast, is served over HTTPS, and is responsive for mobile and tablet devices, then you are already most of the way there. You&rsquo;ll just need a <code>manifest.json</code> file and a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> JavaScript file.</p>
 
-<p>Eventually, I stumbled upon a <a href="https://github.com/pupunzi/jquery.mb.YTPlayer">jQuery plugin</a> that converts a YouTube video into a background. The plugin takes in a YouTube video id and sets the background for you, using an <code>&lt;iframe&gt;</code> instead of the <code>&lt;video&gt;</code> tag. I had experimented with this plugin on previous sites, but was curious if it can be re-created using Gatsby.js and React.</p>
+<p>The <code>manifest.json</code> file tells a compatible browser that you have a Progressive Web App and, on certain mobile devices, it will trigger a prompt to add the app to the Home Screen. It also includes information about the icons that are displayed once added to the Home Screen and the name of the application.</p>
 
-<h4 class="mt-4 mb-4"><a href="http://hc-gatsby-videobg.surge.sh/">React.js YouTube Video Background</a> <small>( <a href="https://github.com/ChangoMan/react-videobg-demo">view source</a> )</small></h4>
+<p>A service worker is a bit more complex, but it&rsquo;s also very powerful. It&rsquo;s essentially a JavaScript file that runs in the background and listens for events, even if the website or application is closed. It can do things like cache the website&rsquo;s files for offline access, enable push notifications, and even access the camera of a mobile device. This is what give your PWA superpowers and makes it feel like a native mobile application.</p>
 
-<p>For this demo, I&rsquo;m going to be using Gatsby.js and a starter that I&rsquo;ve created. In reality, you can do this with any React app, you don&rsquo;t have to use Gatsby if you don&rsquo;t want to. The starter just gives us some content and a layout to work with.</p>
+<h4 class="mt-5 mb-3">Progressive Web Apps with React.js and Create React App</h4>
 
-<pre><code class="language-bash">gatsby new gatsby-videobg https://github.com/ChangoMan/gatsby-starter-dimension
-cd gatsby-videobg
-gatsby develop
+<p>If you use React.js and <a href="https://github.com/facebook/create-react-app" target="_blank">Create React App</a> (CRA) to start your projects, the good news is that the resulting app will be a Progressive Web App by default. Create React App already has everything needed, including the <code>manifest.json</code> ( in the <code>/public</code> directory ) and a Service Worker file called <code>service-worker.js</code> ( handled by <code>registerServiceWorker.js</code> ). You&rsquo;ll have to run <code>yarn build</code> or <code>npm run build</code> and then serve the <code>/build</code> folder before seeing them in action.</p>
+
+<p><amp-img src="../img/pwa-react-1.jpg" alt="PWA with React 1" layout="responsive" width="830" height="840"></amp-img></p>
+
+<p>With the <code>manifest.json</code>, you&rsquo;ll need to generate and add the appropriate icons for the wide variety of devices. A great resource for generating a proper <code>manifest.json</code> file is <a href="https://app-manifest.firebaseapp.com/" target="_blank">app-manifest.firebaseapp.com</a>.</p>
+
+<p>The Service Worker provided by CRA will provide support for offline mode. This means that it will cache all the files generated by CRA during the build process and store them in the browser&rsquo;s Cache Storage. If you turn off your internet connection. the application will still load!</p>
+
+<p><amp-img src="../img/pwa-react-2.jpg" alt="PWA with React 2" layout="responsive" width="911" height="588"></amp-img></p>
+
+<p>This is, however, the bare minimum required for a PWA. The default <code>service-worker.js</code> won&rsquo;t cache any external data or resources and it won&rsquo;t have neat features such as push notifications. You&rsquo;ll probably want to <a href="https://medium.freecodecamp.org/how-to-build-a-pwa-with-create-react-app-and-custom-service-workers-376bd1fdc6d3" target="_blank">register a custom Service Worker</a> if you wish to get the most out your PWA.</p>
+
+<h4 class="mt-5 mb-3">PWAs with Preact.js, Custom Service Workers, and Workbox</h4>
+
+<p>While CRA is a fantastic tool, it doesn&rsquo;t do much for you in terms of code optimization. A Progressive Web App needs to be as fast and performant as possible, and this means smaller JavaScript bundles and code splitting. Enter <a href="https://preactjs.com/" target="_blank">Preact.js</a>, which is a slimmer alternative to React that also has built in support for PWAs. The <a href="https://github.com/developit/preact-cli">Preact CLI</a> functions much like Create React App and it&rsquo;s just as easy to use.</p>
+
+<p>The Service Worker that Preact CLI generates (called <code>sw.js</code>) will cache any generated files for offline use, but what if our web app uses an external API? If we fetch data or images from an external site, then those resources won&rsquo;t be cached by our default Service Worker. We&rsquo;d need to register our own <em>custom</em> Service Worker to enable more robust PWA features.</p>
+
+<p>Here is a <a href="https://medium.com/@applification/service-worker-magic-with-workbox-preact-c9ef35e063ec" target="_blank">wonderful article</a> by Dave Hudson on how to implement a custom Service Worker into Preact.js. If you&rsquo;d rather skip his post, I&rsquo;ve made a repo of his <a href="https://github.com/ChangoMan/Preact-Workbox" target="_blank">finished product here for download</a>. Also included in the repo is the latest version of <a href="https://developers.google.com/web/tools/workbox/" target="_blank">Workbox</a>, which is a set of libraries by Google for PWAs. Workbox makes writing our custom Service Worker much easier and exposes many advanced features for a PWA.</p>
+
+<h4 class="mt-5 mb-3">Building a News Feed PWA using Preact.js</h4>
+
+<p>Starting with the <a href="https://github.com/ChangoMan/Preact-Workbox">Preact-Workbox repo</a>, we&rsquo;ll be creating a super simple Progressive Web App that pulls in the news using this <a href="https://newsapi.org/">News API</a>. We will then add a few simple lines of code into our Service Worker to enable Workbox&rsquo;s offline caching features.</p>
+
+<h4 class="mt-4 mb-4"><a href="https://preactnews.netlify.com/">Preact.js News Feed PWA</a> <small>( <a href="https://github.com/ChangoMan/Preact-PWA-News">view source</a> )</small></h4>
+
+<p>Let&rsquo;s kick things off by cloning the repo and running the dev environment.</p>
+
+<pre><code class="language-bash">git clone https://github.com/ChangoMan/Preact-Workbox.git preact-demo
+cd preact-demo
+npm install
+npm run dev
+# Navigate to http://localhost:8080 in your browser
 </code></pre>
 
-<p>If you go to <code>http://localhost:8000/</code> you&rsquo;ll see something like this: <a href="http://gatsby-dimension.surge.sh/">http://gatsby-dimension.surge.sh/</a></p>
+<p>Here you will see the default boilerplate for a Preact app created with the CLI. Let&rsquo;s add some code to make our very basic news feed app. Open up the main CSS file at <code>src/style/index.css</code> and replace with the following:</p>
 
-<p>Time to kick it up a notch! We&rsquo;ll be installing a React component that plays YouTube videos. There are several to choose from, but I ended up using <a href="https://github.com/troybetz/react-youtube">https://github.com/troybetz/react-youtube</a></p>
-
-<pre><code class="language-bash">yarn add react-youtube
-gatsby develop
-</code></pre>
-
-<p>Open up the main component at <code>/src/layouts/index.js</code> and import the new React component up at the top:</p>
-
-<pre><code class="language-jsx">import React from 'react'
-import '../assets/scss/main.scss'
-import Helmet from 'react-helmet'
-import YouTube from 'react-youtube';
-</code></pre>
-
-<p>For the most part, we can leave everything as is. We just need to comment out the existing <code>&lt;div id=&quot;bg&quot;&gt;&lt;/div&gt;</code> and add in the <code>&lt;YouTube /&gt;</code> component and some options. We&rsquo;ll also add some additional HTML structure around the component for styling purposes. The render method should look something like this:</p>
-
-<pre><code class="language-jsx">_onReady(event) {
-  // access to player in all event handlers via event.target
-  // event.target.mute();
+<pre><code class="language-css">html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #fafafa;
+  font-family: &quot;Helvetica Neue&quot;, arial, sans-serif;
+  font-weight: 400;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-_onEnd(event) {
-  event.target.playVideo();
+* {
+  box-sizing: border-box;
 }
 
-render() {
-  const siteTitle = this.props.data.site.siteMetadata.title
-  const siteDescription = this.props.data.site.siteMetadata.description
+#app {
+  height: 100%;
+}
 
-  const videoOptions = {
-    playerVars: { // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-      controls: 0,
-      rel: 0,
-      showinfo: 0
+.site-header {
+  padding: 2rem 0 1rem;
+}
+
+main {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: max-content;
+  grid-auto-flow: row dense;
+}
+
+.article a,
+.article a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.article img {
+  width: 100%;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.alert {
+  display: inline-block;
+  padding: 15px;
+  border-radius: 0.25rem;
+}
+
+.alert--error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+</code></pre>
+
+<p>Under the home component. we&rsquo;ll add the functionality to fetch for the news using the newsapi.org API. If you haven&rsquo;t done so already, sign up for a free account to get your own API key. Open up the file at <code>/src/routes/home/index.js</code> and replace with the following.</p>
+
+<pre><code class="language-jsx">import { h, Component } from &quot;preact&quot;;
+import style from &quot;./style&quot;;
+
+const apiKey = &quot;YOUR_NEWS_API_KEY&quot;;
+
+export default class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      selectedSource: &quot;techcrunch&quot;,
+      articles: [],
+      sources: []
+    };
+  }
+
+  componentDidMount() {
+    this.updateNews(this.state.selectedSource);
+    this.updateSources();
+  }
+
+  updateNews = async (source = this.state.selectedSource) =&gt; {
+    try {
+      const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&amp;apiKey=${apiKey}`);
+      const json = await res.json();
+
+      this.setState(() =&gt; ({
+        isLoaded: true,
+        articles: json.articles,
+        selectedSource: source
+      }));
+    } catch (error) {
+      this.setState(() =&gt; ({ error }));
     }
   };
 
-  return (
-    &lt;div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}&gt;
-      &lt;Helmet&gt;
-          &lt;title&gt;{siteTitle}&lt;/title&gt;
-          &lt;meta name=&quot;description&quot; content={siteDescription} /&gt;
-      &lt;/Helmet&gt;
+  updateSources = async () =&gt; {
+    try {
+      const res = await fetch(`https://newsapi.org/v2/sources?apiKey=${apiKey}`);
+      const json = await res.json();
 
-      &lt;div id=&quot;wrapper&quot;&gt;
-
-        &lt;Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} /&gt;
-        &lt;Main
-          isArticleVisible={this.state.isArticleVisible}
-          timeout={this.state.timeout}
-          articleTimeout={this.state.articleTimeout}
-          article={this.state.article}
-          onCloseArticle={this.handleCloseArticle}
-        /&gt;
-        &lt;Footer timeout={this.state.timeout} /&gt;
-
-      &lt;/div&gt;
-      {/*&lt;div id=&quot;bg&quot;&gt;&lt;/div&gt;*/}
-
-      &lt;div className=&quot;video-background&quot;&gt;
-        &lt;div className=&quot;video-foreground&quot;&gt;
-          &lt;YouTube
-            videoId=&quot;Z6FPJOgfCkc&quot;
-            opts={videoOptions}
-            className=&quot;video-iframe&quot;
-            onReady={this._onReady}
-            onEnd={this._onEnd}
-          /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  )
-}
-</code></pre>
-
-<p>The <code>&lt;YouTube&gt;</code> component needs a <code>videoId</code> and a set of options, which I&rsquo;ve defined as <code>videoOptions</code>. We&rsquo;ve also added two methods to execute when the player starts and ends. <code>_onReady()</code> is where you can mute the video if needed, or adjust other parameters such as video quality. <code>_onEnd()</code> fires when the video ends, and here we do a <code>playVideo()</code> to do a loop. Check out the <a href="https://github.com/troybetz/react-youtube">react-youtube docs</a> for more uses and options.</p>
-
-<p>That&rsquo;s pretty much it! We&rsquo;ll need to add some CSS to make the resulting <code>&lt;iframe&gt;</code> cover the entire background.</p>
-
-<p>Create a new Sass file at <code>/src/assets/scss/_video.scss</code> with the following:</p>
-
-<pre><code class="language-scss">.video-background {
-    background: #000;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: -99;
-    &amp;::after {
-        display: block;
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        background: rgba(0,0,0,0.75)
+      this.setState(() =&gt; ({
+        sources: json.sources
+      }));
+    } catch (error) {
+      this.setState(() =&gt; ({ error }));
     }
-}
-.video-foreground,
-.video-background iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
+  };
 
-@media (min-aspect-ratio: 16/9) {
-    .video-foreground { height: 300%; top: -100%; }
-}
-@media (max-aspect-ratio: 16/9) {
-    .video-foreground { width: 300%; left: -100%; }
+  render() {
+    const { error, isLoaded, articles } = this.state;
+    if (error) {
+      return (
+        &lt;div className=&quot;error&quot;&gt;
+          &lt;div className=&quot;alert alert--error&quot;&gt;Error: {error.message}&lt;/div&gt;
+        &lt;/div&gt;
+      );
+    } else if (!isLoaded) {
+      return &lt;div&gt;Loading...&lt;/div&gt;;
+    } else {
+      return (
+        &lt;div className={style.home}&gt;
+          &lt;div className=&quot;site-header&quot;&gt;
+            &lt;div className=&quot;select&quot;&gt;
+              &lt;select
+                value={this.state.selectedSource}
+                onChange={e =&gt; {
+                  this.updateNews(e.target.value);
+                }}&gt;
+                {this.state.sources.map(source =&gt; {
+                  return (
+                    &lt;option value={source.id} key={source.id}&gt;
+                      {source.name}
+                    &lt;/option&gt;
+                  );
+                })}
+              &lt;/select&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;main&gt;
+            {articles.map((article, index) =&gt; (
+              &lt;div className=&quot;article&quot; key={index}&gt;
+                &lt;h2&gt;
+                  &lt;a href={article.url}&gt;{article.title}&lt;/a&gt;
+                &lt;/h2&gt;
+                &lt;img src={article.urlToImage} alt=&quot;&quot; /&gt;
+                &lt;p&gt;{article.description}&lt;/p&gt;
+              &lt;/div&gt;
+            ))}
+          &lt;/main&gt;
+        &lt;/div&gt;
+      );
+    }
+  }
 }
 </code></pre>
 
-<p>Make sure to import this into the main Sass file at <code>/src/assets/scss/main.scss</code>. You can obviously adjust any of the CSS for the video background, as well as any of the options that go into <code>&lt;YouTube&gt;</code>. You could also create an array of video ids or a playlist, and play a random video each time the site loads. Here&rsquo;s a branch I made that implements a random video: <a href="https://github.com/ChangoMan/react-videobg-demo/tree/random-video">https://github.com/ChangoMan/react-videobg-demo/tree/random-video</a></p>
+<p>Your app should now be getting some news articles, with the default dropdown source being <code>techcrunch</code>. If you change the dropdown to a different source, it will pull in a different set of articles. Let&rsquo;s open up our <code>service-worker.js</code> file and take a peek.</p>
 
-<h4><a href="http://hc-gatsby-videobg.surge.sh/">Finished Product</a> <small>( <a href="https://github.com/ChangoMan/react-videobg-demo">view source</a> )</small></h4>
+<pre><code class="language-javascript">workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
+</code></pre>
+
+<p>The Service Worker uses Workbox to precache any files that will be generated by Preact.js during the build process. This is much like the default behavior provided by CRA mentioned above. However, we also want to detect and cache the news articles fetched by the News API. We&rsquo;ll simply replace the contents with the following:</p>
+
+<pre><code class="language-javascript">// Default Precache for files generated by Preact.js
+workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
+
+// Detect and register any fetch calls using 'https://' and use the Network First Strategy by Workbox
+workbox.routing.registerRoute(/(?:https:\/\/.*)/,workbox.strategies.networkFirst());
+
+// Handle any images
+workbox.routing.registerRoute(
+  // Cache image files
+  /.*\.(?:png|jpg|jpeg|svg|gif)/,
+  // Use the cache if it's available
+  workbox.strategies.cacheFirst({
+    // Use a custom cache name
+    cacheName: &quot;image-cache&quot;,
+    plugins: [
+      new workbox.expiration.Plugin({
+        // Cache only 20 images
+        maxEntries: 20,
+        // Cache for a maximum of a week
+        maxAgeSeconds: 7 * 24 * 60 * 60
+      })
+    ]
+  })
+);
+</code></pre>
+
+<p>Using Workbox, we can quickly and easily detect fetch requests and deal with them using <a href="https://developers.google.com/web/tools/workbox/guides/route-requests#handling_a_route_with_a_workbox_strategy" target="_blank">Workbox Strategies</a>. There are also a variety of <a href="https://developers.google.com/web/tools/workbox/guides/common-recipes" target="_blank">Workbox Recipes</a> to help with things like image caching and Google Fonts. With this added, our Progressive Web App is done! It&rsquo;s still very basic, but it will load offline and cache the news articles properly. We can do the final build and preview our app.</p>
+
+<pre><code class="language-bash"># Build and serve the assets
+npm run serve
+</code></pre>
+
+<p>When you <code>serve</code> with Preact, it will prompt you to accept some permissions so that it can load over <code>https</code>. If you navigate to <a href="https://localhost:8080">https://localhost:8080</a>, open up your Chrome inspector and head over to the Application tab. Make sure the <code>service-worker.js</code> is active and Workbox is working. You might need to reload the page a couple of times for the caching to kick in.</p>
+
+<p><amp-img src="../img/pwa-react-3.jpg" alt="PWA with React 3" layout="responsive" width="920" height="600"></amp-img></p>
+
+<p>If things don&rsquo;t look right, try clearing the Application&rsquo;s cache under <code>Clear storage &gt; Clear site data</code> and reload the page. You can simulate going offline by checking the <code>Offline</code> box under Service Workers. The app should still load the Tech Crunch articles even if offline. If you browse to other sources before going offline, those should also be cached and served. Sources that you didn&rsquo;t visit will result in an error if you try selecting them while offline.</p>
+
+<p>To audit your PWA, use Google&rsquo;s <a href="https://developers.google.com/web/tools/lighthouse/" target="_blank">Lighthouse</a> in the Chrome Dev Tools. It will simulate a mobile device and throttle the internet to 3G speeds, eventually giving you some scores and advice for improvement.</p>
+
+<p><amp-img src="../img/pwa-react-4.jpg" alt="PWA with React 4" layout="responsive" width="856" height="690"></amp-img></p>
+
+<p>You can also <a href="https://codebushi.com/hosting-your-static-website/">host the app</a> a variety of ways since it&rsquo;s essentially a static website after the build process. Visit your hosted app or the <a href="https://preactnews.netlify.com/" target="_blank">example app</a> using an Android device with Chrome, and you&rsquo;ll see the prompt to add the app to your Home Screen. Apple iOS 11.3 and above will also support Progressive Web Apps, but I&rsquo;m not sure Safari on mobile will pop up a prompt like Chrome does.</p>
+
+<p>Hopefully this was a good intro into Progressive Web Apps. You can take things further by experimenting with more of Google Workbox&rsquo;s recipes and features, making your PWA even better!</p>
+
+<h4 class="mt-4 mb-4"><a href="https://preactnews.netlify.com/">Preact.js News Feed PWA</a> <small>( <a href="https://github.com/ChangoMan/Preact-PWA-News">view source</a> )</small></h4>
 
     </div>
 </main>
